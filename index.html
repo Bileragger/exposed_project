@@ -204,6 +204,22 @@
       border: 1px solid rgba(0, 0, 0, 0.05);
       transition: var(--transition);
       cursor: pointer;
+      position: relative;
+    }
+    
+    .service-card::after {
+      content: '→';
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      opacity: 0;
+      transition: var(--transition);
+      font-size: 1.2rem;
+    }
+    
+    .service-card:hover::after {
+      opacity: 1;
+      transform: translateX(3px);
     }
     
     .service-card:hover {
@@ -398,6 +414,94 @@
       font-size: 0.9rem;
     }
     
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .modal.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+    }
+    
+    .modal-content {
+      background-color: var(--white);
+      padding: 3rem;
+      max-width: 700px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+    
+    .modal.show .modal-content {
+      transform: scale(1);
+    }
+    
+    .close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      font-weight: 300;
+      line-height: 1;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .close:hover {
+      transform: rotate(90deg);
+    }
+    
+    .modal h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .modal-list {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    
+    .modal-list li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    
+    .modal-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+    
+    .modal .btn {
+      margin-top: 2rem;
+    }
+    
     /* Responsive */
     @media (max-width: 768px) {
       .nav-links {
@@ -437,6 +541,16 @@
       
       .portfolio-grid {
         grid-template-columns: 1fr;
+      }
+      
+      .modal-content {
+        width: 95%;
+        padding: 2rem 1.5rem;
+        max-height: 90vh;
+      }
+      
+      .modal h3 {
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -487,37 +601,34 @@
   <section id="servizi">
     <h2>Servizi</h2>
     <div class="services-grid">
-      <div class="service-card">
+      <div class="service-card" onclick="openModal('tech')">
         <div class="service-icon">
-          <!-- AI: Neural Network -->
+          <!-- Tech: Circuit Board Pattern -->
           <svg viewBox="0 0 100 100" width="60" height="60">
-            <circle cx="20" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="50" cy="15" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="80" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="20" cy="50" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="50" cy="50" r="10" fill="currentColor"/>
-            <circle cx="80" cy="50" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="20" cy="80" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="50" cy="85" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="80" cy="80" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <line x1="28" y1="25" x2="42" y2="20" stroke="currentColor" stroke-width="1"/>
-            <line x1="58" y1="20" x2="72" y2="25" stroke="currentColor" stroke-width="1"/>
-            <line x1="28" y1="45" x2="40" y2="50" stroke="currentColor" stroke-width="1"/>
-            <line x1="60" y1="50" x2="72" y2="45" stroke="currentColor" stroke-width="1"/>
-            <line x1="28" y1="75" x2="42" y2="80" stroke="currentColor" stroke-width="1"/>
-            <line x1="58" y1="80" x2="72" y2="75" stroke="currentColor" stroke-width="1"/>
-            <line x1="20" y1="30" x2="20" y2="40" stroke="currentColor" stroke-width="1"/>
-            <line x1="50" y1="25" x2="50" y2="40" stroke="currentColor" stroke-width="1"/>
-            <line x1="80" y1="30" x2="80" y2="40" stroke="currentColor" stroke-width="1"/>
-            <line x1="20" y1="60" x2="20" y2="70" stroke="currentColor" stroke-width="1"/>
-            <line x1="50" y1="60" x2="50" y2="75" stroke="currentColor" stroke-width="1"/>
-            <line x1="80" y1="60" x2="80" y2="70" stroke="currentColor" stroke-width="1"/>
+            <rect x="15" y="15" width="70" height="70" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="30" cy="30" r="4" fill="currentColor"/>
+            <circle cx="70" cy="30" r="4" fill="currentColor"/>
+            <circle cx="30" cy="70" r="4" fill="currentColor"/>
+            <circle cx="70" cy="70" r="4" fill="currentColor"/>
+            <circle cx="50" cy="50" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="34" y1="30" x2="44" y2="30" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="56" y1="30" x2="66" y2="30" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="30" y1="34" x2="30" y2="44" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="30" y1="56" x2="30" y2="66" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="70" y1="34" x2="70" y2="44" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="70" y1="56" x2="70" y2="66" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="34" y1="70" x2="44" y2="70" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="56" y1="70" x2="66" y2="70" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="44" y1="30" x2="44" y2="44" stroke="currentColor" stroke-width="1"/>
+            <line x1="56" y1="30" x2="56" y2="44" stroke="currentColor" stroke-width="1"/>
+            <line x1="44" y1="56" x2="44" y2="70" stroke="currentColor" stroke-width="1"/>
+            <line x1="56" y1="56" x2="56" y2="70" stroke="currentColor" stroke-width="1"/>
           </svg>
         </div>
-        <h3>Consulenze AI</h3>
-        <p>Sviluppo soluzioni innovative con intelligenza artificiale per progetti creativi e aziendali</p>
+        <h3>Consulenze Tecnologiche</h3>
+        <p>Leadership tecnica, gestione progetti e soluzioni innovative in AI, software e hardware</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="openModal('art')">
         <div class="service-icon">
           <!-- Art: Intersecting Circles -->
           <svg viewBox="0 0 100 100" width="60" height="60">
@@ -676,6 +787,326 @@
     <p>&copy; 2024 Exposed Project. Tutti i diritti riservati.</p>
   </footer>
 
+  <!-- Modals -->
+  <div id="techModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('tech')">&times;</span>
+      <h3>Consulenze Tecnologiche</h3>
+      <p style="margin-bottom: 2rem;">
+        Con oltre 10 anni di esperienza come consulente tecnologico, offro competenze multidisciplinari 
+        che spaziano dall'intelligenza artificiale alla gestione di progetti complessi.
+      </p>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Aree di Competenza</h4>
+      <ul class="modal-list">
+        <li><strong>Intelligenza Artificiale:</strong> Machine Learning, Deep Learning, NLP, Computer Vision</li>
+        <li><strong>Sviluppo Software:</strong> Architetture scalabili, microservizi, API design</li>
+        <li><strong>Hardware & IoT:</strong> Sistemi embedded, sensori, integrazione hardware-software</li>
+        <li><strong>Cloud & DevOps:</strong> AWS, Azure, Docker, Kubernetes, CI/CD</li>
+        <li><strong>Data Engineering:</strong> Big Data, ETL, real-time processing</li>
+      </ul>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Servizi Offerti</h4>
+      <ul class="modal-list">
+        <li>Technical Leadership e mentoring team di sviluppo</li>
+        <li>Project Management per progetti innovativi</li>
+        <li>Architettura di soluzioni enterprise</li>
+        <li>Consulenza strategica per trasformazione digitale</li>
+        <li>Proof of Concept e prototipi rapidi</li>
+        <li>Code review e ottimizzazione performance</li>
+      </ul>
+      
+      <p style="margin-top: 2rem; color: var(--gray-medium);">
+        La mia filosofia integra rigore tecnico e creatività, utilizzando anche pratiche contemplative 
+        per migliorare problem solving e innovazione.
+      </p>
+      
+      <a href="mailto:bileragger@gmail.com?subject=Consulenza%20Tecnologica" class="btn">Richiedi Consulenza</a>
+    </div>
+  </div>
+
+  <div id="artModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('art')">&times;</span>
+      <h3>Collaborazioni Artistiche</h3>
+      <p style="margin-bottom: 2rem;">
+        L'arte e la tecnologia non sono mondi separati. Creo ponti tra questi universi, 
+        sviluppando progetti che esplorano l'intersezione tra codice e creatività.
+      </p>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Tipologie di Progetti</h4>
+      <ul class="modal-list">
+        <li>Installazioni interattive con sensori e proiezioni</li>
+        <li>Arte generativa e algoritmica</li>
+        <li>Visualizzazioni di dati artistiche</li>
+        <li>Performance audiovisive con controllo real-time</li>
+        <li>Realtà aumentata e virtuale per esperienze immersive</li>
+      </ul>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Collaborazioni</h4>
+      <p style="margin-bottom: 1rem;">
+        Lavoro con artisti, musicisti, designer e curatori per:
+      </p>
+      <ul class="modal-list">
+        <li>Consulenza tecnica per progetti artistici complessi</li>
+        <li>Sviluppo software custom per installazioni</li>
+        <li>Workshop su creative coding e new media art</li>
+        <li>Co-creazione di concept innovativi</li>
+      </ul>
+      
+      <p style="margin-top: 2rem; color: var(--gray-medium);">
+        Ogni progetto è un'opportunità per esplorare nuovi linguaggi espressivi 
+        attraverso la tecnologia.
+      </p>
+      
+      <a href="mailto:bileragger@gmail.com?subject=Collaborazione%20Artistica" class="btn">Proponi Collaborazione</a>
+    </div>
+  </div>
+
+  <div id="ichingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('iching')">&times;</span>
+      <h3>Letture I Ching</h3>
+      <p style="margin-bottom: 2rem;">
+        L'I Ching, il Libro dei Mutamenti, è uno dei più antichi testi di saggezza dell'umanità. 
+        Offro letture personalizzate che combinano l'antica tradizione con una comprensione contemporanea.
+      </p>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Cos'è l'I Ching</h4>
+      <p style="margin-bottom: 1rem;">
+        Un sistema oracolare e filosofico basato su 64 esagrammi che rappresentano 
+        situazioni archetipiche della vita umana. Ogni consultazione offre:
+      </p>
+      <ul class="modal-list">
+        <li>Prospettive profonde sulla situazione attuale</li>
+        <li>Consigli per navigare cambiamenti e decisioni</li>
+        <li>Comprensione delle dinamiche sottostanti</li>
+        <li>Indicazioni su tempistiche e sviluppi futuri</li>
+      </ul>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Come Funziona</h4>
+      <ul class="modal-list">
+        <li>Inviami la tua domanda via email</li>
+        <li>Eseguo il lancio tradizionale delle monete</li>
+        <li>Interpreto l'esagramma risultante</li>
+        <li>Ti invio una lettura dettagliata e personalizzata</li>
+      </ul>
+      
+      <p style="margin-top: 2rem; color: var(--gray-medium);">
+        Le letture sono offerte a donazione libera. L'I Ching mi ha guidato anche 
+        nelle decisioni tecniche e creative più complesse.
+      </p>
+      
+      <a href="mailto:bileragger@gmail.com?subject=Domanda%20I%20Ching" class="btn">Richiedi Lettura</a>
+      <a href="https://paypal.me/tuonome" class="btn-outline">Donazione PayPal</a>
+    </div>
+  </div>
+
+  <div id="massageModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('massage')">&times;</span>
+      <h3>Massaggio Svedese</h3>
+      <p style="margin-bottom: 2rem;">
+        Il corpo è il primo strumento della nostra creatività e produttività. 
+        Offro massaggi svedesi professionali per il benessere psicofisico completo.
+      </p>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Benefici del Massaggio Svedese</h4>
+      <ul class="modal-list">
+        <li>Rilassamento profondo del sistema nervoso</li>
+        <li>Riduzione di stress e tensioni muscolari</li>
+        <li>Miglioramento della circolazione sanguigna</li>
+        <li>Aumento della flessibilità e mobilità</li>
+        <li>Riequilibrio energetico generale</li>
+      </ul>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">L'Approccio</h4>
+      <p style="margin-bottom: 1rem;">
+        Ogni sessione è personalizzata e integra:
+      </p>
+      <ul class="modal-list">
+        <li>Tecniche classiche svedesi</li>
+        <li>Attenzione ai punti di tensione specifici</li>
+        <li>Ambiente rilassante e professionale</li>
+        <li>Durata: 60 o 90 minuti</li>
+      </ul>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Informazioni Pratiche</h4>
+      <p style="margin-bottom: 1rem;">
+        <strong>Dove:</strong> Napoli e dintorni<br>
+        <strong>Su appuntamento</strong><br>
+        <strong>Prezzi:</strong> Da concordare in base alla durata
+      </p>
+      
+      <p style="margin-top: 2rem; color: var(--gray-medium);">
+        Il massaggio è per me una forma di meditazione attiva che beneficia 
+        sia chi lo riceve che chi lo pratica.
+      </p>
+      
+      <a href="mailto:bileragger@gmail.com?subject=Appuntamento%20Massaggio" class="btn">Prenota Sessione</a>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div id="techModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('tech')">&times;</span>
+      <h3>Consulenze Tecnologiche</h3>
+      <p style="margin-bottom: 2rem;">
+        Con oltre 10 anni di esperienza come consulente tecnologico, offro competenze multidisciplinari 
+        che spaziano dall'intelligenza artificiale alla gestione di progetti complessi.
+      </p>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Aree di Competenza</h4>
+      <ul class="modal-list">
+        <li><strong>Intelligenza Artificiale:</strong> Machine Learning, Deep Learning, NLP, Computer Vision</li>
+        <li><strong>Sviluppo Software:</strong> Architetture scalabili, microservizi, API design</li>
+        <li><strong>Hardware & IoT:</strong> Sistemi embedded, sensori, integrazione hardware-software</li>
+        <li><strong>Cloud & DevOps:</strong> AWS, Azure, Docker, Kubernetes, CI/CD</li>
+        <li><strong>Data Engineering:</strong> Big Data, ETL, real-time processing</li>
+      </ul>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Servizi Offerti</h4>
+      <ul class="modal-list">
+        <li>Technical Leadership e mentoring team di sviluppo</li>
+        <li>Project Management per progetti innovativi</li>
+        <li>Architettura di soluzioni enterprise</li>
+        <li>Consulenza strategica per trasformazione digitale</li>
+        <li>Proof of Concept e prototipi rapidi</li>
+        <li>Code review e ottimizzazione performance</li>
+      </ul>
+      
+      <p style="margin-top: 2rem; color: var(--gray-medium);">
+        La mia filosofia integra rigore tecnico e creatività, utilizzando anche pratiche contemplative 
+        per migliorare problem solving e innovazione.
+      </p>
+      
+      <a href="mailto:bileragger@gmail.com?subject=Consulenza%20Tecnologica" class="btn">Richiedi Consulenza</a>
+    </div>
+  </div>
+
+  <div id="artModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('art')">&times;</span>
+      <h3>Collaborazioni Artistiche</h3>
+      <p style="margin-bottom: 2rem;">
+        L'arte e la tecnologia non sono mondi separati. Creo ponti tra questi universi, 
+        sviluppando progetti che esplorano l'intersezione tra codice e creatività.
+      </p>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Tipologie di Progetti</h4>
+      <ul class="modal-list">
+        <li>Installazioni interattive con sensori e proiezioni</li>
+        <li>Arte generativa e algoritmica</li>
+        <li>Visualizzazioni di dati artistiche</li>
+        <li>Performance audiovisive con controllo real-time</li>
+        <li>Realtà aumentata e virtuale per esperienze immersive</li>
+      </ul>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Collaborazioni</h4>
+      <p style="margin-bottom: 1rem;">
+        Lavoro con artisti, musicisti, designer e curatori per:
+      </p>
+      <ul class="modal-list">
+        <li>Consulenza tecnica per progetti artistici complessi</li>
+        <li>Sviluppo software custom per installazioni</li>
+        <li>Workshop su creative coding e new media art</li>
+        <li>Co-creazione di concept innovativi</li>
+      </ul>
+      
+      <p style="margin-top: 2rem; color: var(--gray-medium);">
+        Ogni progetto è un'opportunità per esplorare nuovi linguaggi espressivi 
+        attraverso la tecnologia.
+      </p>
+      
+      <a href="mailto:bileragger@gmail.com?subject=Collaborazione%20Artistica" class="btn">Proponi Collaborazione</a>
+    </div>
+  </div>
+
+  <div id="ichingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('iching')">&times;</span>
+      <h3>Letture I Ching</h3>
+      <p style="margin-bottom: 2rem;">
+        L'I Ching, il Libro dei Mutamenti, è uno dei più antichi testi di saggezza dell'umanità. 
+        Offro letture personalizzate che combinano l'antica tradizione con una comprensione contemporanea.
+      </p>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Cos'è l'I Ching</h4>
+      <p style="margin-bottom: 1rem;">
+        Un sistema oracolare e filosofico basato su 64 esagrammi che rappresentano 
+        situazioni archetipiche della vita umana. Ogni consultazione offre:
+      </p>
+      <ul class="modal-list">
+        <li>Prospettive profonde sulla situazione attuale</li>
+        <li>Consigli per navigare cambiamenti e decisioni</li>
+        <li>Comprensione delle dinamiche sottostanti</li>
+        <li>Indicazioni su tempistiche e sviluppi futuri</li>
+      </ul>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Come Funziona</h4>
+      <ul class="modal-list">
+        <li>Inviami la tua domanda via email</li>
+        <li>Eseguo il lancio tradizionale delle monete</li>
+        <li>Interpreto l'esagramma risultante</li>
+        <li>Ti invio una lettura dettagliata e personalizzata</li>
+      </ul>
+      
+      <p style="margin-top: 2rem; color: var(--gray-medium);">
+        Le letture sono offerte a donazione libera. L'I Ching mi ha guidato anche 
+        nelle decisioni tecniche e creative più complesse.
+      </p>
+      
+      <a href="mailto:bileragger@gmail.com?subject=Domanda%20I%20Ching" class="btn">Richiedi Lettura</a>
+      <a href="https://paypal.me/tuonome" class="btn-outline">Donazione PayPal</a>
+    </div>
+  </div>
+
+  <div id="massageModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('massage')">&times;</span>
+      <h3>Massaggio Svedese</h3>
+      <p style="margin-bottom: 2rem;">
+        Il corpo è il primo strumento della nostra creatività e produttività. 
+        Offro massaggi svedesi professionali per il benessere psicofisico completo.
+      </p>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Benefici del Massaggio Svedese</h4>
+      <ul class="modal-list">
+        <li>Rilassamento profondo del sistema nervoso</li>
+        <li>Riduzione di stress e tensioni muscolari</li>
+        <li>Miglioramento della circolazione sanguigna</li>
+        <li>Aumento della flessibilità e mobilità</li>
+        <li>Riequilibrio energetico generale</li>
+      </ul>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">L'Approccio</h4>
+      <p style="margin-bottom: 1rem;">
+        Ogni sessione è personalizzata e integra:
+      </p>
+      <ul class="modal-list">
+        <li>Tecniche classiche svedesi</li>
+        <li>Attenzione ai punti di tensione specifici</li>
+        <li>Ambiente rilassante e professionale</li>
+        <li>Durata: 60 o 90 minuti</li>
+      </ul>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Informazioni Pratiche</h4>
+      <p style="margin-bottom: 1rem;">
+        <strong>Dove:</strong> Napoli e dintorni<br>
+        <strong>Su appuntamento</strong><br>
+        <strong>Prezzi:</strong> Da concordare in base alla durata
+      </p>
+      
+      <p style="margin-top: 2rem; color: var(--gray-medium);">
+        Il massaggio è per me una forma di meditazione attiva che beneficia 
+        sia chi lo riceve che chi lo pratica.
+      </p>
+      
+      <a href="mailto:bileragger@gmail.com?subject=Appuntamento%20Massaggio" class="btn">Prenota Sessione</a>
+    </div>
+  </div>
+
   <script>
     // Mobile menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
@@ -715,6 +1146,53 @@
         header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
       } else {
         header.style.boxShadow = 'none';
+      }
+    });
+    
+    // Modal functions
+    function openModal(modalType) {
+      const modal = document.getElementById(modalType + 'Modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        setTimeout(() => {
+          modal.classList.add('show');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+      } else {
+        console.error('Modal not found:', modalType + 'Modal');
+      }
+    }
+    
+    function closeModal(modalType) {
+      const modal = document.getElementById(modalType + 'Modal');
+      if (modal) {
+        modal.classList.remove('show');
+        setTimeout(() => {
+          modal.style.display = 'none';
+        }, 300);
+        document.body.style.overflow = 'auto';
+      }
+    }
+    
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target == modal) {
+          const modalType = modal.id.replace('Modal', '');
+          closeModal(modalType);
+        }
+      });
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        const modals = document.querySelectorAll('.modal.show');
+        modals.forEach(modal => {
+          const modalType = modal.id.replace('Modal', '');
+          closeModal(modalType);
+        });
       }
     });
   </script>
