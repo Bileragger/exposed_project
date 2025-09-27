@@ -3,67 +3,636 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sito Personale</title>
+  <title>Nome Cognome - Ingegnere AI & Praticante Olistico</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
-    header { background: #222; color: #fff; padding: 1rem; position: fixed; width: 100%; top: 0; }
-    header nav a { color: #fff; margin: 0 1rem; text-decoration: none; }
-    section { padding: 80px 20px; min-height: 100vh; }
-    h1, h2 { margin-top: 0; }
-    .btn { display: inline-block; margin-top: 10px; padding: 10px 15px; background: #333; color: #fff; text-decoration: none; border-radius: 5px; }
-    .btn:hover { background: #555; }
-    .container { max-width: 800px; margin: auto; }
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+    
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --gray-light: #f7f7f7;
+      --gray-medium: #666;
+      --gray-dark: #333;
+      --accent: #c9a961;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--black);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+    
+    /* Navigation */
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+    
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: var(--black);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 400;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+    
+    .menu-toggle span {
+      width: 25px;
+      height: 2px;
+      background: var(--black);
+      transition: var(--transition);
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 0 2rem;
+    }
+    
+    .hero-content {
+      text-align: center;
+      max-width: 800px;
+    }
+    
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .hero .subtitle {
+      font-size: 1.25rem;
+      color: var(--gray-medium);
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
+    
+    .sacred-geometry {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      opacity: 0.05;
+      animation: rotate 60s linear infinite;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .sacred-geometry.top-right {
+      top: 10%;
+      right: 5%;
+    }
+    
+    .sacred-geometry.bottom-left {
+      bottom: 10%;
+      left: 5%;
+      animation-direction: reverse;
+    }
+    
+    /* Sections */
+    section {
+      padding: 100px 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    section:nth-child(even) {
+      background: var(--gray-light);
+    }
+    
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin-bottom: 3rem;
+      text-align: center;
+      position: relative;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 1px;
+      background: var(--accent);
+    }
+    
+    /* Collaborazioni Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+    
+    .service-card {
+      text-align: center;
+      padding: 2rem;
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+    
+    .service-card p {
+      color: var(--gray-medium);
+      line-height: 1.8;
+    }
+    
+    /* Portfolio Section */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      background: var(--black);
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+    
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: var(--transition);
+      padding: 2rem;
+      text-align: center;
+    }
+    
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+    
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+      opacity: 0.3;
+    }
+    
+    .portfolio-overlay h3 {
+      color: var(--white);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .portfolio-overlay p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.95rem;
+    }
+    
+    /* I Ching Section */
+    .iching-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .hexagram {
+      margin: 3rem auto;
+      width: 80px;
+    }
+    
+    .hexagram-line {
+      height: 8px;
+      margin: 6px 0;
+      background: var(--black);
+    }
+    
+    .hexagram-line.broken {
+      background: linear-gradient(90deg, var(--black) 35%, transparent 35%, transparent 65%, var(--black) 65%);
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      border: 1px solid var(--black);
+      margin: 0.5rem;
+    }
+    
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: var(--black);
+      border: 1px solid var(--black);
+    }
+    
+    .btn-outline:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+    
+    /* Contact Section */
+    .contact-content {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .contact-info {
+      margin: 3rem 0;
+    }
+    
+    .contact-info p {
+      margin: 1rem 0;
+      font-size: 1.1rem;
+    }
+    
+    .social-links {
+      margin-top: 2rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+    }
+    
+    .social-links a {
+      color: var(--black);
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      .nav-links.active {
+        right: 0;
+      }
+      
+      .menu-toggle {
+        display: flex;
+        z-index: 1001;
+      }
+      
+      .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+      
+      .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+      
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Navigation -->
   <header>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#collaborazioni">Collaborazioni</a>
-      <a href="#iching">I Ching</a>
-      <a href="#massaggio">Massaggio</a>
-      <a href="#contatti">Contatti</a>
+      <div class="logo">NC</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#iching">I Ching</a></li>
+        <li><a href="#massaggio">Massaggio</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
   </header>
 
-  <section id="home">
-    <div class="container">
-      <h1>Il mio Sito Personale</h1>
-      <p>Ingegnere software specializzato in AI, collaboratore artistico, lettore di I Ching e praticante di massaggio svedese.</p>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <!-- Sacred Geometry SVG Background -->
+    <svg class="sacred-geometry top-right" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <polygon points="100,20 180,100 100,180 20,100" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <polygon points="100,50 150,100 100,150 50,100" fill="none" stroke="currentColor" stroke-width="0.5"/>
+    </svg>
+    <svg class="sacred-geometry bottom-left" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <polygon points="100,20 180,100 100,180 20,100" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <polygon points="100,50 150,100 100,150 50,100" fill="none" stroke="currentColor" stroke-width="0.5"/>
+    </svg>
+    
+    <div class="hero-content">
+      <h1>Dove Tecnologia e Spiritualità Si Incontrano</h1>
+      <p class="subtitle">Ingegnere AI • Collaboratore Artistico • Praticante I Ching • Massaggiatore Svedese</p>
+      <a href="#servizi" class="btn">Esplora i Servizi</a>
     </div>
   </section>
 
-  <section id="collaborazioni">
-    <div class="container">
-      <h2>Collaborazioni artistiche e consulenze AI</h2>
-      <p>Offro consulenze tecniche e artistiche nell'ambito dell'intelligenza artificiale e delle pratiche creative.</p>
-      <a href="mailto:bileragger@gmail.com" class="btn">Contattami</a>
+  <!-- Servizi Section -->
+  <section id="servizi">
+    <h2>Servizi</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3>Consulenze AI</h3>
+        <p>Sviluppo soluzioni innovative con intelligenza artificiale per progetti creativi e aziendali</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Collaborazioni Artistiche</h3>
+        <p>Unisco tecnologia e arte per creare esperienze uniche e progetti multimediali innovativi</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">☯️</div>
+        <h3>Letture I Ching</h3>
+        <p>Consulenze personalizzate attraverso l'antica saggezza del Libro dei Mutamenti</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🙏</div>
+        <h3>Massaggio Svedese</h3>
+        <p>Trattamenti olistici per il rilassamento profondo e il riequilibrio energetico</p>
+      </div>
     </div>
   </section>
 
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x300/000000/ffffff?text=Progetto+AI+1" alt="Progetto AI">
+        <div class="portfolio-overlay">
+          <h3>Neural Art Generator</h3>
+          <p>Sistema di generazione artistica basato su reti neurali</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x300/333333/ffffff?text=Installazione+Arte" alt="Installazione">
+        <div class="portfolio-overlay">
+          <h3>Installazione Interattiva</h3>
+          <p>Arte generativa che risponde alla presenza umana</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x300/666666/ffffff?text=Concept+Design" alt="Concept">
+        <div class="portfolio-overlay">
+          <h3>Concept Spirituale</h3>
+          <p>Visualizzazione di concetti metafisici attraverso algoritmi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- I Ching Section -->
   <section id="iching">
-    <div class="container">
-      <h2>Lettura I Ching</h2>
-      <p>Puoi inviarmi una domanda e ricevere una lettura personalizzata dell'I Ching. È possibile lasciare un'offerta libera tramite PayPal.</p>
-      <a href="mailto:bileragger@gmail.com?subject=Domanda%20I%20Ching" class="btn">Invia una domanda</a>
-      <a href="https://paypal.me/tuonome" target="_blank" class="btn">Offerta PayPal</a>
+    <h2>I Ching</h2>
+    <div class="iching-content">
+      <div class="hexagram">
+        <div class="hexagram-line"></div>
+        <div class="hexagram-line broken"></div>
+        <div class="hexagram-line"></div>
+        <div class="hexagram-line broken"></div>
+        <div class="hexagram-line broken"></div>
+        <div class="hexagram-line"></div>
+      </div>
+      <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+        L'I Ching, o Libro dei Mutamenti, è un antico sistema di saggezza che offre 
+        intuizioni profonde sulle situazioni della vita. Attraverso la consultazione 
+        degli esagrammi, possiamo trovare chiarezza e direzione nel nostro cammino.
+      </p>
+      <p style="color: var(--gray-medium); margin-bottom: 3rem;">
+        Invia la tua domanda per ricevere una lettura personalizzata. 
+        Offerta libera attraverso PayPal.
+      </p>
+      <a href="mailto:bileragger@gmail.com?subject=Domanda%20I%20Ching" class="btn">Richiedi una Lettura</a>
+      <a href="https://paypal.me/tuonome" class="btn-outline">Offerta PayPal</a>
     </div>
   </section>
 
+  <!-- Massaggio Section -->
   <section id="massaggio">
-    <div class="container">
-      <h2>Massaggio Svedese</h2>
-      <p>Offro massaggi svedesi per rilassamento e benessere. Contattami per fissare un appuntamento.</p>
-      <a href="mailto:bileragger@gmail.com?subject=Appuntamento%20Massaggio" class="btn">Prenota</a>
+    <h2>Massaggio Svedese</h2>
+    <div class="contact-content">
+      <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+        Il massaggio svedese è una pratica olistica che combina tecniche di 
+        rilassamento profondo con il riequilibrio energetico del corpo. 
+        Ogni sessione è personalizzata per rispondere alle tue esigenze specifiche, 
+        creando uno spazio di benessere totale.
+      </p>
+      <p style="color: var(--gray-medium); margin-bottom: 3rem;">
+        Sessioni disponibili su appuntamento a Napoli e dintorni.
+      </p>
+      <a href="mailto:bileragger@gmail.com?subject=Appuntamento%20Massaggio" class="btn">Prenota una Sessione</a>
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contatti">
-    <div class="container">
-      <h2>Contatti</h2>
-      <p>Email: bileragger@gmail.com</p>
-      <p>Social: <a href="#">Instagram</a> | <a href="#">LinkedIn</a></p>
+    <h2>Contatti</h2>
+    <div class="contact-content">
+      <div class="contact-info">
+        <p><strong>Email:</strong> bileragger@gmail.com</p>
+        <p><strong>Sede:</strong> Napoli, Italia</p>
+      </div>
+      <div class="social-links">
+        <a href="#">📷</a>
+        <a href="#">💼</a>
+        <a href="#">🐦</a>
+      </div>
+      <p style="margin-top: 3rem; color: var(--gray-medium);">
+        "La vera saggezza nasce dall'integrazione di tutte le dimensioni dell'essere"
+      </p>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Nome Cognome. Tutti i diritti riservati.</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+    
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Header shadow on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
