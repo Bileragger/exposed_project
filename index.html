@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exposed Project - Ingegnere AI & Praticante Olistico</title>
+  <title>Exposed Project - Systems Engineer & Innovation Consultant</title>
   <!-- Favicon: Sacred Geometry Symbol -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3Cpolygon points='16,6 26,16 16,26 6,16' fill='none' stroke='%23c9a961' stroke-width='1'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23ffffff'/%3E%3C/svg%3E">
   <style>
@@ -160,7 +160,7 @@
       transition: var(--transition);
     }
     
-    /* Hero Section */
+    /* Hero Section - NEW */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -168,11 +168,23 @@
       justify-content: center;
       position: relative;
       padding: 0 2rem;
+      background: linear-gradient(135deg, var(--white) 0%, var(--gray-light) 100%);
     }
     
     .hero-content {
       text-align: center;
-      max-width: 800px;
+      max-width: 900px;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+      font-weight: 400;
     }
     
     .hero h1 {
@@ -184,34 +196,35 @@
     }
     
     .hero .subtitle {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
+      color: var(--gray-dark);
+      margin-bottom: 2rem;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+    
+    .hero .tagline {
+      font-size: 1rem;
       color: var(--gray-medium);
       margin-bottom: 3rem;
-      font-weight: 300;
+      font-style: italic;
     }
     
-    .sacred-geometry {
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .pattern-bg {
       position: absolute;
-      width: 300px;
-      height: 300px;
-      opacity: 0.05;
-      animation: rotate 60s linear infinite;
-    }
-    
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    
-    .sacred-geometry.top-right {
-      top: 10%;
-      right: 5%;
-    }
-    
-    .sacred-geometry.bottom-left {
-      bottom: 10%;
-      left: 5%;
-      animation-direction: reverse;
+      width: 100%;
+      height: 100%;
+      opacity: 0.03;
+      pointer-events: none;
+      background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(0,0,0,.05) 35px, rgba(0,0,0,.05) 70px);
     }
     
     /* Sections */
@@ -229,33 +242,60 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-weight: 400;
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
       text-align: center;
       position: relative;
     }
     
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 50px;
-      height: 1px;
-      background: var(--accent);
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray-medium);
+      margin-bottom: 4rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Approach Section - NEW */
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    
+    .approach-card {
+      text-align: center;
+    }
+    
+    .approach-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--gray-light);
+      border: 2px solid var(--accent);
+    }
+    
+    .approach-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
     
     /* Services Grid */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 3rem;
-      margin-top: 4rem;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
     }
     
     .service-card {
-      text-align: center;
-      padding: 2rem;
+      padding: 2.5rem;
       background: var(--white);
       border: 1px solid rgba(0, 0, 0, 0.05);
       transition: var(--transition);
@@ -263,38 +303,22 @@
       position: relative;
     }
     
-    .service-card::after {
-      content: '→';
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      opacity: 0;
-      transition: var(--transition);
-      font-size: 1.2rem;
-    }
-    
-    .service-card:hover::after {
-      opacity: 1;
-      transform: translateX(3px);
-    }
-    
     .service-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
     
-    .service-icon {
-      margin-bottom: 1.5rem;
-      color: var(--black);
-    }
-    
-    .service-icon svg {
-      margin: 0 auto;
+    .service-category {
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-weight: 500;
     }
     
     .service-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       margin-bottom: 1rem;
       font-weight: 400;
     }
@@ -302,6 +326,23 @@
     .service-card p {
       color: var(--gray-medium);
       line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    
+    .service-features {
+      list-style: none;
+      font-size: 0.95rem;
+    }
+    
+    .service-features li {
+      padding: 0.3rem 0;
+      color: var(--gray-dark);
+    }
+    
+    .service-features li:before {
+      content: "→ ";
+      color: var(--accent);
+      font-weight: bold;
     }
     
     /* Portfolio Section */
@@ -365,26 +406,110 @@
       font-size: 0.95rem;
     }
     
-    /* I Ching Section */
-    .iching-content {
-      max-width: 700px;
+    /* About Section - NEW */
+    .about-content {
+      max-width: 800px;
       margin: 0 auto;
+    }
+    
+    .about-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: var(--gray-dark);
+    }
+    
+    .journey-timeline {
+      margin-top: 3rem;
+      position: relative;
+      padding-left: 2rem;
+    }
+    
+    .journey-timeline:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--accent);
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+    }
+    
+    .timeline-item:before {
+      content: '';
+      position: absolute;
+      left: -2.5rem;
+      top: 0.5rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--white);
+    }
+    
+    .timeline-item h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Wellness Section - NEW */
+    .wellness-intro {
+      max-width: 700px;
+      margin: 0 auto 3rem;
       text-align: center;
+      padding: 2rem;
+      background: var(--white);
+      border-left: 3px solid var(--accent);
     }
     
-    .hexagram {
-      margin: 3rem auto;
-      width: 80px;
+    .wellness-intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--gray-dark);
     }
     
-    .hexagram-line {
-      height: 8px;
-      margin: 6px 0;
-      background: var(--black);
+    .wellness-services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
     }
     
-    .hexagram-line.broken {
-      background: linear-gradient(90deg, var(--black) 35%, transparent 35%, transparent 65%, var(--black) 65%);
+    .wellness-card {
+      padding: 2rem;
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 320px;
+    }
+    
+    .wellness-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+    
+    .wellness-icon {
+      margin-bottom: 1.5rem;
+    }
+    
+    .wellness-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .wellness-card p {
+      margin-bottom: 2rem;
+      flex-grow: 1;
     }
     
     /* Buttons */
@@ -416,6 +541,24 @@
     .btn-outline:hover {
       background: var(--black);
       color: var(--white);
+    }
+    
+    .btn-subtle {
+      background: transparent;
+      color: var(--gray-medium);
+      border: 1px solid var(--gray-medium);
+      font-size: 0.9rem;
+      padding: 0.8rem 2rem;
+      display: inline-block;
+      text-decoration: none;
+      transition: var(--transition);
+      margin-top: auto;
+    }
+    
+    .btn-subtle:hover {
+      background: var(--gray-medium);
+      color: var(--white);
+      border-color: var(--gray-medium);
     }
     
     /* Contact Section */
@@ -603,8 +746,13 @@
         transform: rotate(-45deg) translate(6px, -6px);
       }
       
-      .portfolio-grid {
+      .portfolio-grid, .services-grid {
         grid-template-columns: 1fr;
+      }
+      
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
       }
       
       .modal-content {
@@ -627,11 +775,12 @@
       <div class="nav-wrapper">
         <ul class="nav-links">
           <li><a href="#home" data-i18n="nav.home">Home</a></li>
-          <li><a href="#servizi" data-i18n="nav.services">Servizi</a></li>
+          <li><a href="#approach" data-i18n="nav.approach">Approccio</a></li>
+          <li><a href="#services" data-i18n="nav.services">Servizi</a></li>
           <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
-          <li><a href="#iching" data-i18n="nav.iching">I Ching</a></li>
-          <li><a href="#massaggio" data-i18n="nav.massage">Massaggio</a></li>
-          <li><a href="#contatti" data-i18n="nav.contact">Contatti</a></li>
+          <li><a href="#about" data-i18n="nav.about">Chi Sono</a></li>
+          <li><a href="#wellness" data-i18n="nav.wellness">Wellness</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contatti</a></li>
         </ul>
         <div class="lang-switcher">
           <div class="lang-indicator"></div>
@@ -649,72 +798,217 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <!-- Sacred Geometry SVG Background -->
-    <svg class="sacred-geometry top-right" viewBox="0 0 200 200">
-      <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.5"/>
-      <polygon points="100,20 180,100 100,180 20,100" fill="none" stroke="currentColor" stroke-width="0.5"/>
-      <polygon points="100,50 150,100 100,150 50,100" fill="none" stroke="currentColor" stroke-width="0.5"/>
-    </svg>
-    <svg class="sacred-geometry bottom-left" viewBox="0 0 200 200">
-      <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.5"/>
-      <polygon points="100,20 180,100 100,180 20,100" fill="none" stroke="currentColor" stroke-width="0.5"/>
-      <polygon points="100,50 150,100 100,150 50,100" fill="none" stroke="currentColor" stroke-width="0.5"/>
-    </svg>
-    
+    <div class="pattern-bg"></div>
     <div class="hero-content">
-      <h1 data-i18n="hero.title">Dove Tecnologia e Spiritualità Si Incontrano</h1>
-      <p class="subtitle" data-i18n="hero.subtitle">Ingegnere AI • Collaboratore Artistico • Praticante I Ching • Massaggiatore Svedese</p>
-      <a href="#servizi" class="btn" data-i18n="hero.cta">Esplora i Servizi</a>
+      <div class="hero-badge" data-i18n="hero.badge">SYSTEMS ENGINEER</div>
+      <h1 data-i18n="hero.title">Decodifico Pattern Complessi</h1>
+      <p class="subtitle" data-i18n="hero.subtitle">
+        Che si tratti di architetture software, sistemi creativi o dinamiche umane,<br>
+        applico lo stesso approccio sistemico per trovare soluzioni innovative.
+      </p>
+      <p class="tagline" data-i18n="hero.tagline">
+        "La vera innovazione nasce dall'integrazione di prospettive diverse"
+      </p>
+      <div class="hero-cta">
+        <a href="#services" class="btn" data-i18n="hero.cta1">Esplora i Servizi</a>
+        <a href="#approach" class="btn" data-i18n="hero.cta2">Il Mio Approccio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach Section -->
+  <section id="approach">
+    <h2 data-i18n="approach.title">Un Approccio Unico al Problem Solving</h2>
+    <p class="section-subtitle" data-i18n="approach.subtitle">
+      Dieci anni di esperienza mi hanno insegnato che i problemi più complessi richiedono 
+      più di una sola prospettiva. Ecco come integro diverse discipline per creare valore.
+    </p>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <div class="approach-icon">
+          <svg viewBox="0 0 60 60" width="40" height="40">
+            <rect x="10" y="10" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="20" cy="20" r="3" fill="currentColor"/>
+            <circle cx="40" cy="20" r="3" fill="currentColor"/>
+            <circle cx="20" cy="40" r="3" fill="currentColor"/>
+            <circle cx="40" cy="40" r="3" fill="currentColor"/>
+            <line x1="23" y1="20" x2="37" y2="20" stroke="currentColor" stroke-width="1"/>
+            <line x1="20" y1="23" x2="20" y2="37" stroke="currentColor" stroke-width="1"/>
+            <line x1="40" y1="23" x2="40" y2="37" stroke="currentColor" stroke-width="1"/>
+            <line x1="23" y1="40" x2="37" y2="40" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </div>
+        <h3 data-i18n="approach.analytical.title">Analisi Sistemica</h3>
+        <p data-i18n="approach.analytical.desc">
+          Scompongo sistemi complessi in componenti comprensibili, 
+          identificando pattern e connessioni nascoste attraverso metodologie tech avanzate.
+        </p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-icon">
+          <svg viewBox="0 0 60 60" width="40" height="40">
+            <circle cx="20" cy="30" r="15" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="40" cy="30" r="15" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M 30 20 L 30 40" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <h3 data-i18n="approach.creative.title">Sintesi Creativa</h3>
+        <p data-i18n="approach.creative.desc">
+          Unisco tecnologia e intuizione per generare soluzioni originali, 
+          utilizzando l'arte e il design thinking come catalizzatori d'innovazione.
+        </p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-icon">
+          <svg viewBox="0 0 60 60" width="40" height="40">
+            <circle cx="30" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="30" cy="30" r="10" fill="none" stroke="currentColor" stroke-width="1"/>
+            <circle cx="30" cy="30" r="2" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 data-i18n="approach.holistic.title">Visione Olistica</h3>
+        <p data-i18n="approach.holistic.desc">
+          Considero il contesto umano e organizzativo, integrando saggezza sistemica 
+          per soluzioni sostenibili e centrate sulle persone.
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section id="servizi">
-    <h2 data-i18n="services.title">Servizi</h2>
+  <section id="services">
+    <h2 data-i18n="services.title">Servizi Professionali</h2>
+    <p class="section-subtitle" data-i18n="services.subtitle">
+      Dalla consulenza tecnologica alla facilitazione creativa, ogni servizio è progettato 
+      per risolvere sfide specifiche con un approccio integrato.
+    </p>
     <div class="services-grid">
       <div class="service-card" onclick="openModal('tech')">
-        <div class="service-icon">
-          <!-- Tech: Circuit Board Pattern -->
-          <svg viewBox="0 0 100 100" width="60" height="60">
-            <rect x="15" y="15" width="70" height="70" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="30" cy="30" r="4" fill="currentColor"/>
-            <circle cx="70" cy="30" r="4" fill="currentColor"/>
-            <circle cx="30" cy="70" r="4" fill="currentColor"/>
-            <circle cx="70" cy="70" r="4" fill="currentColor"/>
-            <circle cx="50" cy="50" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <line x1="34" y1="30" x2="44" y2="30" stroke="currentColor" stroke-width="1.5"/>
-            <line x1="56" y1="30" x2="66" y2="30" stroke="currentColor" stroke-width="1.5"/>
-            <line x1="30" y1="34" x2="30" y2="44" stroke="currentColor" stroke-width="1.5"/>
-            <line x1="30" y1="56" x2="30" y2="66" stroke="currentColor" stroke-width="1.5"/>
-            <line x1="70" y1="34" x2="70" y2="44" stroke="currentColor" stroke-width="1.5"/>
-            <line x1="70" y1="56" x2="70" y2="66" stroke="currentColor" stroke-width="1.5"/>
-            <line x1="34" y1="70" x2="44" y2="70" stroke="currentColor" stroke-width="1.5"/>
-            <line x1="56" y1="70" x2="66" y2="70" stroke="currentColor" stroke-width="1.5"/>
-            <line x1="44" y1="30" x2="44" y2="44" stroke="currentColor" stroke-width="1"/>
-            <line x1="56" y1="30" x2="56" y2="44" stroke="currentColor" stroke-width="1"/>
-            <line x1="44" y1="56" x2="44" y2="70" stroke="currentColor" stroke-width="1"/>
-            <line x1="56" y1="56" x2="56" y2="70" stroke="currentColor" stroke-width="1"/>
-          </svg>
-        </div>
-        <h3 data-i18n="services.tech.title">Consulenze Tecnologiche</h3>
-        <p data-i18n="services.tech.desc">Leadership tecnica, gestione progetti e soluzioni innovative in AI, software e hardware</p>
+        <div class="service-category" data-i18n="services.tech.category">TECNOLOGIA</div>
+        <h3 data-i18n="services.tech.title">Consulenza & Leadership Tecnica</h3>
+        <p data-i18n="services.tech.desc">
+          Guido team e progetti tecnologici complessi, specializzandomi in architetture AI, 
+          trasformazione digitale e innovazione sistemica.
+        </p>
+        <ul class="service-features">
+          <li data-i18n="services.tech.f1">Architetture AI e Machine Learning</li>
+          <li data-i18n="services.tech.f2">Technical Leadership & Team Building</li>
+          <li data-i18n="services.tech.f3">Digital Transformation Strategy</li>
+          <li data-i18n="services.tech.f4">Systems Architecture & Integration</li>
+        </ul>
       </div>
-      <div class="service-card" onclick="openModal('art')">
-        <div class="service-icon">
-          <!-- Art: Intersecting Circles -->
-          <svg viewBox="0 0 100 100" width="60" height="60">
-            <circle cx="35" cy="50" r="25" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="65" cy="50" r="25" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M 50 30 L 50 70" stroke="currentColor" stroke-width="1.5" fill="none"/>
-            <circle cx="50" cy="50" r="3" fill="currentColor"/>
-          </svg>
-        </div>
-        <h3 data-i18n="services.art.title">Collaborazioni Artistiche</h3>
-        <p data-i18n="services.art.desc">Unisco tecnologia e arte per creare esperienze uniche e progetti multimediali innovativi</p>
+      
+      <div class="service-card" onclick="openModal('creative')">
+        <div class="service-category" data-i18n="services.creative.category">INNOVAZIONE</div>
+        <h3 data-i18n="services.creative.title">Creative Technology & Design</h3>
+        <p data-i18n="services.creative.desc">
+          Sviluppo progetti all'intersezione tra arte e tecnologia, creando esperienze 
+          innovative e installazioni interattive.
+        </p>
+        <ul class="service-features">
+          <li data-i18n="services.creative.f1">Installazioni interattive e new media art</li>
+          <li data-i18n="services.creative.f2">Creative coding e arte generativa</li>
+          <li data-i18n="services.creative.f3">Design thinking workshops</li>
+          <li data-i18n="services.creative.f4">Innovation consulting</li>
+        </ul>
       </div>
-      <div class="service-card" onclick="openModal('iching')">
-        <div class="service-icon">
-          <!-- I Ching: Hexagram -->
+      
+      <div class="service-card" onclick="openModal('strategic')">
+        <div class="service-category" data-i18n="services.strategic.category">STRATEGIA</div>
+        <h3 data-i18n="services.strategic.title">Strategic Problem Solving</h3>
+        <p data-i18n="services.strategic.desc">
+          Applico metodologie sistemiche avanzate per risolvere sfide organizzative 
+          complesse e facilitare decisioni strategiche.
+        </p>
+        <ul class="service-features">
+          <li data-i18n="services.strategic.f1">Analisi sistemica organizzativa</li>
+          <li data-i18n="services.strategic.f2">Facilitazione decisionale con I Ching</li>
+          <li data-i18n="services.strategic.f3">Pattern recognition consulting</li>
+          <li data-i18n="services.strategic.f4">Change management support</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2 data-i18n="portfolio.title">Progetti Selezionati</h2>
+    <p class="section-subtitle" data-i18n="portfolio.subtitle">
+      Una selezione di progetti che dimostrano l'approccio integrato al problem solving.
+    </p>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x300/000000/ffffff?text=AI+Architecture" alt="AI Project">
+        <div class="portfolio-overlay">
+          <h3 data-i18n="portfolio.project1.title">AI-Driven Supply Chain</h3>
+          <p data-i18n="portfolio.project1.desc">Sistema predittivo che ha ridotto i costi del 30% integrando ML e saggezza sistemica</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x300/333333/ffffff?text=Creative+Tech" alt="Creative Tech">
+        <div class="portfolio-overlay">
+          <h3 data-i18n="portfolio.project2.title">Interactive Data Sculpture</h3>
+          <p data-i18n="portfolio.project2.desc">Installazione che visualizza pattern organizzativi attraverso arte generativa</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x300/666666/ffffff?text=Strategic+Design" alt="Strategic">
+        <div class="portfolio-overlay">
+          <h3 data-i18n="portfolio.project3.title">Digital Transformation Framework</h3>
+          <p data-i18n="portfolio.project3.desc">Metodologia proprietaria che integra tech, creatività e fattore umano</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2 data-i18n="about.title">Il Percorso</h2>
+    <div class="about-content">
+      <p data-i18n="about.intro">
+        Il mio percorso professionale è stato guidato dalla curiosità verso i pattern che 
+        governano sistemi complessi - dal codice alla creatività, dalla tecnologia alla 
+        dimensione umana.
+      </p>
+      <p data-i18n="about.experience">
+        Con oltre 10 anni come consulente tecnologico, ho imparato che le soluzioni più 
+        efficaci nascono quando superiamo i confini disciplinari. Ho guidato team di sviluppo, 
+        progettato architetture AI, e parallelamente esplorato come pratiche contemplative 
+        e creative possano potenziare l'innovazione tecnologica.
+      </p>
+      <div class="journey-timeline">
+        <div class="timeline-item">
+          <h4 data-i18n="about.t1.title">Ingegneria & Tecnologia</h4>
+          <p data-i18n="about.t1.desc">Fondamenta in computer science, specializzazione in AI e sistemi distribuiti</p>
+        </div>
+        <div class="timeline-item">
+          <h4 data-i18n="about.t2.title">Leadership & Consulenza</h4>
+          <p data-i18n="about.t2.desc">10+ anni guidando progetti di trasformazione digitale per enterprise</p>
+        </div>
+        <div class="timeline-item">
+          <h4 data-i18n="about.t3.title">Arte & Creatività</h4>
+          <p data-i18n="about.t3.desc">Esplorazione di new media art e creative coding come strumenti di innovazione</p>
+        </div>
+        <div class="timeline-item">
+          <h4 data-i18n="about.t4.title">Integrazione Sistemica</h4>
+          <p data-i18n="about.t4.desc">Studio di I Ching e pratiche olistiche per decision-making avanzato</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wellness Section -->
+  <section id="wellness">
+    <h2 data-i18n="wellness.title">Performance & Wellness</h2>
+    <div class="wellness-intro">
+      <p data-i18n="wellness.intro">
+        Per professionisti che comprendono che la performance ottimale richiede equilibrio. 
+        Offro servizi complementari basati su pratiche millenarie, adattate al contesto contemporaneo.
+      </p>
+    </div>
+    <div class="wellness-services">
+      <div class="wellness-card">
+        <div class="wellness-icon">
           <svg viewBox="0 0 100 100" width="60" height="60">
             <line x1="25" y1="25" x2="75" y2="25" stroke="currentColor" stroke-width="2"/>
             <line x1="25" y1="35" x2="45" y2="35" stroke="currentColor" stroke-width="2"/>
@@ -727,12 +1021,16 @@
             <line x1="25" y1="75" x2="75" y2="75" stroke="currentColor" stroke-width="2"/>
           </svg>
         </div>
-        <h3 data-i18n="services.iching.title">Letture I Ching</h3>
-        <p data-i18n="services.iching.desc">Consulenze personalizzate attraverso l'antica saggezza del Libro dei Mutamenti</p>
+        <h3 data-i18n="wellness.iching.title">I Ching per Decision Making</h3>
+        <p data-i18n="wellness.iching.desc">
+          Sessioni di consulenza strategica usando l'antico sistema di pattern recognition 
+          per navigare decisioni complesse e transizioni.
+        </p>
+        <a href="mailto:bileragger@gmail.com?subject=Sessione%20I%20Ching" class="btn-subtle" data-i18n="wellness.iching.cta">Scopri di Più</a>
       </div>
-      <div class="service-card" onclick="openModal('massage')">
-        <div class="service-icon">
-          <!-- Massage: Flowing Wave -->
+      
+      <div class="wellness-card">
+        <div class="wellness-icon">
           <svg viewBox="0 0 100 100" width="60" height="60">
             <path d="M 15 50 Q 30 30, 50 50 T 85 50" stroke="currentColor" stroke-width="1.5" fill="none"/>
             <path d="M 15 40 Q 30 20, 50 40 T 85 40" stroke="currentColor" stroke-width="1" fill="none" opacity="0.5"/>
@@ -740,90 +1038,28 @@
             <circle cx="50" cy="50" r="3" fill="currentColor"/>
           </svg>
         </div>
-        <h3 data-i18n="services.massage.title">Massaggio Svedese</h3>
-        <p data-i18n="services.massage.desc">Trattamenti olistici per il rilassamento profondo e il riequilibrio energetico</p>
+        <h3 data-i18n="wellness.massage.title">Massaggio per Performance</h3>
+        <p data-i18n="wellness.massage.desc">
+          Sessioni di massaggio svedese professionale per gestire lo stress, 
+          migliorare il focus e mantenere l'equilibrio psicofisico.
+        </p>
+        <a href="mailto:bileragger@gmail.com?subject=Sessione%20Massaggio" class="btn-subtle" data-i18n="wellness.massage.cta">Prenota Sessione</a>
       </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2 data-i18n="portfolio.title">Portfolio</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <img src="https://via.placeholder.com/400x300/000000/ffffff?text=Progetto+AI+1" alt="Progetto AI">
-        <div class="portfolio-overlay">
-          <h3 data-i18n="portfolio.project1.title">Neural Art Generator</h3>
-          <p data-i18n="portfolio.project1.desc">Sistema di generazione artistica basato su reti neurali</p>
-        </div>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://via.placeholder.com/400x300/333333/ffffff?text=Installazione+Arte" alt="Installazione">
-        <div class="portfolio-overlay">
-          <h3 data-i18n="portfolio.project2.title">Installazione Interattiva</h3>
-          <p data-i18n="portfolio.project2.desc">Arte generativa che risponde alla presenza umana</p>
-        </div>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://via.placeholder.com/400x300/666666/ffffff?text=Concept+Design" alt="Concept">
-        <div class="portfolio-overlay">
-          <h3 data-i18n="portfolio.project3.title">Concept Spirituale</h3>
-          <p data-i18n="portfolio.project3.desc">Visualizzazione di concetti metafisici attraverso algoritmi</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- I Ching Section -->
-  <section id="iching">
-    <h2 data-i18n="iching.title">I Ching</h2>
-    <div class="iching-content">
-      <div class="hexagram">
-        <div class="hexagram-line"></div>
-        <div class="hexagram-line broken"></div>
-        <div class="hexagram-line"></div>
-        <div class="hexagram-line broken"></div>
-        <div class="hexagram-line broken"></div>
-        <div class="hexagram-line"></div>
-      </div>
-      <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;" data-i18n="iching.desc">
-        L'I Ching, o Libro dei Mutamenti, è un antico sistema di saggezza che offre 
-        intuizioni profonde sulle situazioni della vita. Attraverso la consultazione 
-        degli esagrammi, possiamo trovare chiarezza e direzione nel nostro cammino.
-      </p>
-      <p style="color: var(--gray-medium); margin-bottom: 3rem;" data-i18n="iching.info">
-        Invia la tua domanda per ricevere una lettura personalizzata. 
-        Offerta libera attraverso PayPal.
-      </p>
-      <a href="mailto:bileragger@gmail.com?subject=Domanda%20I%20Ching" class="btn" data-i18n="iching.cta">Richiedi una Lettura</a>
-      <a href="https://paypal.me/tuonome" class="btn-outline" data-i18n="iching.donate">Offerta PayPal</a>
-    </div>
-  </section>
-
-  <!-- Massage Section -->
-  <section id="massaggio">
-    <h2 data-i18n="massage.title">Massaggio Svedese</h2>
-    <div class="contact-content">
-      <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;" data-i18n="massage.desc">
-        Il massaggio svedese è una pratica olistica che combina tecniche di 
-        rilassamento profondo con il riequilibrio energetico del corpo. 
-        Ogni sessione è personalizzata per rispondere alle tue esigenze specifiche, 
-        creando uno spazio di benessere totale.
-      </p>
-      <p style="color: var(--gray-medium); margin-bottom: 3rem;" data-i18n="massage.info">
-        Sessioni disponibili su appuntamento a Napoli e dintorni.
-      </p>
-      <a href="mailto:bileragger@gmail.com?subject=Appuntamento%20Massaggio" class="btn" data-i18n="massage.cta">Prenota una Sessione</a>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contatti">
-    <h2 data-i18n="contact.title">Contatti</h2>
+  <section id="contact">
+    <h2 data-i18n="contact.title">Iniziamo una Conversazione</h2>
     <div class="contact-content">
+      <p style="font-size: 1.1rem; margin-bottom: 2rem;" data-i18n="contact.intro">
+        Che tu stia cercando un consulente tech, un partner creativo o un approccio 
+        innovativo ai tuoi progetti, sono qui per ascoltare e collaborare.
+      </p>
       <div class="contact-info">
         <p><strong data-i18n="contact.email">Email:</strong> bileragger@gmail.com</p>
-        <p><strong data-i18n="contact.location">Sede:</strong> <span data-i18n="contact.city">Napoli, Italia</span></p>
+        <p><strong data-i18n="contact.location">Base:</strong> <span data-i18n="contact.city">Napoli, Italia</span></p>
+        <p><strong data-i18n="contact.availability">Disponibilità:</strong> <span data-i18n="contact.remote">Progetti locali e remoti</span></p>
       </div>
       <div class="social-links">
         <a href="#" title="Instagram">
@@ -847,9 +1083,6 @@
           </svg>
         </a>
       </div>
-      <p style="margin-top: 3rem; color: var(--gray-medium);" data-i18n="contact.quote">
-        "La vera saggezza nasce dall'integrazione di tutte le dimensioni dell'essere"
-      </p>
     </div>
   </section>
 
@@ -862,128 +1095,88 @@
   <div id="techModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('tech')">&times;</span>
-      <h3 data-i18n="modal.tech.title">Consulenze Tecnologiche</h3>
+      <h3 data-i18n="modal.tech.title">Consulenza & Leadership Tecnica</h3>
       <p style="margin-bottom: 2rem;" data-i18n="modal.tech.intro">
-        Con oltre 10 anni di esperienza come consulente tecnologico, offro competenze multidisciplinari 
-        che spaziano dall'intelligenza artificiale alla gestione di progetti complessi.
+        Oltre 10 anni di esperienza nel guidare trasformazioni digitali complesse, 
+        con un focus su AI e innovazione sistemica.
       </p>
       
-      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.tech.areas">Aree di Competenza</h4>
-      <ul class="modal-list" id="tech-areas">
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.tech.expertise">Expertise Tecnica</h4>
+      <ul class="modal-list" id="tech-expertise">
         <!-- Populated by JS -->
       </ul>
       
-      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.tech.services">Servizi Offerti</h4>
-      <ul class="modal-list" id="tech-services">
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.tech.approach">Approccio Distintivo</h4>
+      <p data-i18n="modal.tech.approachDesc">
+        Integro rigore tecnico con pensiero sistemico e creatività. Utilizzo pattern recognition 
+        avanzato per identificare soluzioni non ovvie e sostenibili.
+      </p>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.tech.results">Risultati Tipici</h4>
+      <ul class="modal-list" id="tech-results">
         <!-- Populated by JS -->
       </ul>
       
-      <p style="margin-top: 2rem; color: var(--gray-medium);" data-i18n="modal.tech.philosophy">
-        La mia filosofia integra rigore tecnico e creatività, utilizzando anche pratiche contemplative 
-        per migliorare problem solving e innovazione.
-      </p>
-      
-      <a href="mailto:bileragger@gmail.com?subject=Consulenza%20Tecnologica" class="btn" data-i18n="modal.tech.cta">Richiedi Consulenza</a>
+      <a href="mailto:bileragger@gmail.com?subject=Consulenza%20Tecnologica" class="btn" data-i18n="modal.tech.cta">Discutiamo il Tuo Progetto</a>
     </div>
   </div>
 
-  <div id="artModal" class="modal">
+  <div id="creativeModal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('art')">&times;</span>
-      <h3 data-i18n="modal.art.title">Collaborazioni Artistiche</h3>
-      <p style="margin-bottom: 2rem;" data-i18n="modal.art.intro">
-        L'arte e la tecnologia non sono mondi separati. Creo ponti tra questi universi, 
-        sviluppando progetti che esplorano l'intersezione tra codice e creatività.
+      <span class="close" onclick="closeModal('creative')">&times;</span>
+      <h3 data-i18n="modal.creative.title">Creative Technology & Design</h3>
+      <p style="margin-bottom: 2rem;" data-i18n="modal.creative.intro">
+        L'innovazione più radicale nasce quando tecnologia e creatività convergono. 
+        Sviluppo progetti che trasformano dati e algoritmi in esperienze significative.
       </p>
       
-      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.art.types">Tipologie di Progetti</h4>
-      <ul class="modal-list" id="art-types">
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.creative.services">Servizi Creativi</h4>
+      <ul class="modal-list" id="creative-services">
         <!-- Populated by JS -->
       </ul>
       
-      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.art.collab">Collaborazioni</h4>
-      <p style="margin-bottom: 1rem;" data-i18n="modal.art.collabDesc">
-        Lavoro con artisti, musicisti, designer e curatori per:
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.creative.process">Processo Creativo</h4>
+      <p data-i18n="modal.creative.processDesc">
+        Ogni progetto inizia con l'ascolto profondo del contesto e degli obiettivi, 
+        seguito da prototipazione rapida e iterazione continua fino alla soluzione ottimale.
       </p>
-      <ul class="modal-list" id="art-collab">
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.creative.applications">Applicazioni</h4>
+      <ul class="modal-list" id="creative-applications">
         <!-- Populated by JS -->
       </ul>
       
-      <p style="margin-top: 2rem; color: var(--gray-medium);" data-i18n="modal.art.philosophy">
-        Ogni progetto è un'opportunità per esplorare nuovi linguaggi espressivi 
-        attraverso la tecnologia.
-      </p>
-      
-      <a href="mailto:bileragger@gmail.com?subject=Collaborazione%20Artistica" class="btn" data-i18n="modal.art.cta">Proponi Collaborazione</a>
+      <a href="mailto:bileragger@gmail.com?subject=Progetto%20Creativo" class="btn" data-i18n="modal.creative.cta">Esploriamo le Possibilità</a>
     </div>
   </div>
 
-  <div id="ichingModal" class="modal">
+  <div id="strategicModal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('iching')">&times;</span>
-      <h3 data-i18n="modal.iching.title">Letture I Ching</h3>
-      <p style="margin-bottom: 2rem;" data-i18n="modal.iching.intro">
-        L'I Ching, il Libro dei Mutamenti, è uno dei più antichi testi di saggezza dell'umanità. 
-        Offro letture personalizzate che combinano l'antica tradizione con una comprensione contemporanea.
+      <span class="close" onclick="closeModal('strategic')">&times;</span>
+      <h3 data-i18n="modal.strategic.title">Strategic Problem Solving</h3>
+      <p style="margin-bottom: 2rem;" data-i18n="modal.strategic.intro">
+        Applico metodologie sistemiche uniche per decodificare complessità organizzative 
+        e facilitare decisioni strategiche in contesti di incertezza.
       </p>
       
-      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.iching.what">Cos'è l'I Ching</h4>
-      <p style="margin-bottom: 1rem;" data-i18n="modal.iching.whatDesc">
-        Un sistema oracolare e filosofico basato su 64 esagrammi che rappresentano 
-        situazioni archetipiche della vita umana. Ogni consultazione offre:
-      </p>
-      <ul class="modal-list" id="iching-offers">
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.strategic.methods">Metodologie</h4>
+      <ul class="modal-list" id="strategic-methods">
         <!-- Populated by JS -->
       </ul>
       
-      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.iching.how">Come Funziona</h4>
-      <ul class="modal-list" id="iching-process">
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.strategic.iching">I Ching nel Business</h4>
+      <p data-i18n="modal.strategic.ichingDesc">
+        L'I Ching è un sistema di pattern recognition con 3000 anni di storia. 
+        Lo applico come framework decisionale per navigare transizioni e identificare 
+        opportunità nascoste nei momenti di cambiamento.
+      </p>
+      
+      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.strategic.benefits">Benefici</h4>
+      <ul class="modal-list" id="strategic-benefits">
         <!-- Populated by JS -->
       </ul>
       
-      <p style="margin-top: 2rem; color: var(--gray-medium);" data-i18n="modal.iching.philosophy">
-        Le letture sono offerte a donazione libera. L'I Ching mi ha guidato anche 
-        nelle decisioni tecniche e creative più complesse.
-      </p>
-      
-      <a href="mailto:bileragger@gmail.com?subject=Domanda%20I%20Ching" class="btn" data-i18n="modal.iching.cta">Richiedi Lettura</a>
-      <a href="https://paypal.me/tuonome" class="btn-outline" data-i18n="modal.iching.donate">Donazione PayPal</a>
-    </div>
-  </div>
-
-  <div id="massageModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('massage')">&times;</span>
-      <h3 data-i18n="modal.massage.title">Massaggio Svedese</h3>
-      <p style="margin-bottom: 2rem;" data-i18n="modal.massage.intro">
-        Il corpo è il primo strumento della nostra creatività e produttività. 
-        Offro massaggi svedesi professionali per il benessere psicofisico completo.
-      </p>
-      
-      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.massage.benefits">Benefici del Massaggio Svedese</h4>
-      <ul class="modal-list" id="massage-benefits">
-        <!-- Populated by JS -->
-      </ul>
-      
-      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.massage.approach">L'Approccio</h4>
-      <p style="margin-bottom: 1rem;" data-i18n="modal.massage.approachDesc">
-        Ogni sessione è personalizzata e integra:
-      </p>
-      <ul class="modal-list" id="massage-approach">
-        <!-- Populated by JS -->
-      </ul>
-      
-      <h4 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;" data-i18n="modal.massage.practical">Informazioni Pratiche</h4>
-      <p style="margin-bottom: 1rem;" id="massage-practical">
-        <!-- Populated by JS -->
-      </p>
-      
-      <p style="margin-top: 2rem; color: var(--gray-medium);" data-i18n="modal.massage.philosophy">
-        Il massaggio è per me una forma di meditazione attiva che beneficia 
-        sia chi lo riceve che chi lo pratica.
-      </p>
-      
-      <a href="mailto:bileragger@gmail.com?subject=Appuntamento%20Massaggio" class="btn" data-i18n="modal.massage.cta">Prenota Sessione</a>
+      <a href="mailto:bileragger@gmail.com?subject=Consulenza%20Strategica" class="btn" data-i18n="modal.strategic.cta">Analizziamo la Situazione</a>
     </div>
   </div>
 
@@ -993,330 +1186,400 @@
       it: {
         nav: {
           home: "Home",
+          approach: "Approccio",
           services: "Servizi",
           portfolio: "Portfolio",
-          iching: "I Ching",
-          massage: "Massaggio",
+          about: "Chi Sono",
+          wellness: "Wellness",
           contact: "Contatti"
         },
         hero: {
-          title: "Dove Tecnologia e Spiritualità Si Incontrano",
-          subtitle: "Ingegnere AI • Collaboratore Artistico • Praticante I Ching • Massaggiatore Svedese",
-          cta: "Esplora i Servizi"
+          badge: "SYSTEMS ENGINEER",
+          title: "Decodifico Pattern Complessi",
+          subtitle: "Che si tratti di architetture software, sistemi creativi o dinamiche umane,<br>applico lo stesso approccio sistemico per trovare soluzioni innovative.",
+          tagline: '"La vera innovazione nasce dall\'integrazione di prospettive diverse"',
+          cta1: "Esplora i Servizi",
+          cta2: "Il Mio Approccio"
+        },
+        approach: {
+          title: "Un Approccio Unico al Problem Solving",
+          subtitle: "Dieci anni di esperienza mi hanno insegnato che i problemi più complessi richiedono più di una sola prospettiva. Ecco come integro diverse discipline per creare valore.",
+          analytical: {
+            title: "Analisi Sistemica",
+            desc: "Scompongo sistemi complessi in componenti comprensibili, identificando pattern e connessioni nascoste attraverso metodologie tech avanzate."
+          },
+          creative: {
+            title: "Sintesi Creativa",
+            desc: "Unisco tecnologia e intuizione per generare soluzioni originali, utilizzando l'arte e il design thinking come catalizzatori d'innovazione."
+          },
+          holistic: {
+            title: "Visione Olistica",
+            desc: "Considero il contesto umano e organizzativo, integrando saggezza sistemica per soluzioni sostenibili e centrate sulle persone."
+          }
         },
         services: {
-          title: "Servizi",
+          title: "Servizi Professionali",
+          subtitle: "Dalla consulenza tecnologica alla facilitazione creativa, ogni servizio è progettato per risolvere sfide specifiche con un approccio integrato.",
           tech: {
-            title: "Consulenze Tecnologiche",
-            desc: "Leadership tecnica, gestione progetti e soluzioni innovative in AI, software e hardware"
+            category: "TECNOLOGIA",
+            title: "Consulenza & Leadership Tecnica",
+            desc: "Guido team e progetti tecnologici complessi, specializzandomi in architetture AI, trasformazione digitale e innovazione sistemica.",
+            f1: "Architetture AI e Machine Learning",
+            f2: "Technical Leadership & Team Building",
+            f3: "Digital Transformation Strategy",
+            f4: "Systems Architecture & Integration"
           },
-          art: {
-            title: "Collaborazioni Artistiche",
-            desc: "Unisco tecnologia e arte per creare esperienze uniche e progetti multimediali innovativi"
+          creative: {
+            category: "INNOVAZIONE",
+            title: "Creative Technology & Design",
+            desc: "Sviluppo progetti all'intersezione tra arte e tecnologia, creando esperienze innovative e installazioni interattive.",
+            f1: "Installazioni interattive e new media art",
+            f2: "Creative coding e arte generativa",
+            f3: "Design thinking workshops",
+            f4: "Innovation consulting"
           },
-          iching: {
-            title: "Letture I Ching",
-            desc: "Consulenze personalizzate attraverso l'antica saggezza del Libro dei Mutamenti"
-          },
-          massage: {
-            title: "Massaggio Svedese",
-            desc: "Trattamenti olistici per il rilassamento profondo e il riequilibrio energetico"
+          strategic: {
+            category: "STRATEGIA",
+            title: "Strategic Problem Solving",
+            desc: "Applico metodologie sistemiche avanzate per risolvere sfide organizzative complesse e facilitare decisioni strategiche.",
+            f1: "Analisi sistemica organizzativa",
+            f2: "Facilitazione decisionale con I Ching",
+            f3: "Pattern recognition consulting",
+            f4: "Change management support"
           }
         },
         portfolio: {
-          title: "Portfolio",
+          title: "Progetti Selezionati",
+          subtitle: "Una selezione di progetti che dimostrano l'approccio integrato al problem solving.",
           project1: {
-            title: "Neural Art Generator",
-            desc: "Sistema di generazione artistica basato su reti neurali"
+            title: "AI-Driven Supply Chain",
+            desc: "Sistema predittivo che ha ridotto i costi del 30% integrando ML e saggezza sistemica"
           },
           project2: {
-            title: "Installazione Interattiva",
-            desc: "Arte generativa che risponde alla presenza umana"
+            title: "Interactive Data Sculpture",
+            desc: "Installazione che visualizza pattern organizzativi attraverso arte generativa"
           },
           project3: {
-            title: "Concept Spirituale",
-            desc: "Visualizzazione di concetti metafisici attraverso algoritmi"
+            title: "Digital Transformation Framework",
+            desc: "Metodologia proprietaria che integra tech, creatività e fattore umano"
           }
         },
-        iching: {
-          title: "I Ching",
-          desc: "L'I Ching, o Libro dei Mutamenti, è un antico sistema di saggezza che offre intuizioni profonde sulle situazioni della vita. Attraverso la consultazione degli esagrammi, possiamo trovare chiarezza e direzione nel nostro cammino.",
-          info: "Invia la tua domanda per ricevere una lettura personalizzata. Offerta libera attraverso PayPal.",
-          cta: "Richiedi una Lettura",
-          donate: "Offerta PayPal"
+        about: {
+          title: "Il Percorso",
+          intro: "Il mio percorso professionale è stato guidato dalla curiosità verso i pattern che governano sistemi complessi - dal codice alla creatività, dalla tecnologia alla dimensione umana.",
+          experience: "Con oltre 10 anni come consulente tecnologico, ho imparato che le soluzioni più efficaci nascono quando superiamo i confini disciplinari. Ho guidato team di sviluppo, progettato architetture AI, e parallelamente esplorato come pratiche contemplative e creative possano potenziare l'innovazione tecnologica.",
+          t1: {
+            title: "Ingegneria & Tecnologia",
+            desc: "Fondamenta in computer science, specializzazione in AI e sistemi distribuiti"
+          },
+          t2: {
+            title: "Leadership & Consulenza",
+            desc: "10+ anni guidando progetti di trasformazione digitale per enterprise"
+          },
+          t3: {
+            title: "Arte & Creatività",
+            desc: "Esplorazione di new media art e creative coding come strumenti di innovazione"
+          },
+          t4: {
+            title: "Integrazione Sistemica",
+            desc: "Studio di I Ching e pratiche olistiche per decision-making avanzato"
+          }
         },
-        massage: {
-          title: "Massaggio Svedese",
-          desc: "Il massaggio svedese è una pratica olistica che combina tecniche di rilassamento profondo con il riequilibrio energetico del corpo. Ogni sessione è personalizzata per rispondere alle tue esigenze specifiche, creando uno spazio di benessere totale.",
-          info: "Sessioni disponibili su appuntamento a Napoli e dintorni.",
-          cta: "Prenota una Sessione"
+        wellness: {
+          title: "Performance & Wellness",
+          intro: "Per professionisti che comprendono che la performance ottimale richiede equilibrio. Offro servizi complementari basati su pratiche millenarie, adattate al contesto contemporaneo.",
+          iching: {
+            title: "I Ching per Decision Making",
+            desc: "Sessioni di consulenza strategica usando l'antico sistema di pattern recognition per navigare decisioni complesse e transizioni.",
+            cta: "Scopri di Più"
+          },
+          massage: {
+            title: "Massaggio per Performance",
+            desc: "Sessioni di massaggio svedese professionale per gestire lo stress, migliorare il focus e mantenere l'equilibrio psicofisico.",
+            cta: "Prenota Sessione"
+          }
         },
         contact: {
-          title: "Contatti",
+          title: "Iniziamo una Conversazione",
+          intro: "Che tu stia cercando un consulente tech, un partner creativo o un approccio innovativo ai tuoi progetti, sono qui per ascoltare e collaborare.",
           email: "Email:",
-          location: "Sede:",
+          location: "Base:",
           city: "Napoli, Italia",
-          quote: '"La vera saggezza nasce dall\'integrazione di tutte le dimensioni dell\'essere"'
+          availability: "Disponibilità:",
+          remote: "Progetti locali e remoti"
         },
         footer: {
           rights: "Tutti i diritti riservati."
         },
         modal: {
           tech: {
-            title: "Consulenze Tecnologiche",
-            intro: "Con oltre 10 anni di esperienza come consulente tecnologico, offro competenze multidisciplinari che spaziano dall'intelligenza artificiale alla gestione di progetti complessi.",
-            areas: "Aree di Competenza",
-            services: "Servizi Offerti",
-            philosophy: "La mia filosofia integra rigore tecnico e creatività, utilizzando anche pratiche contemplative per migliorare problem solving e innovazione.",
-            cta: "Richiedi Consulenza",
-            areasList: [
-              "<strong>Intelligenza Artificiale:</strong> Machine Learning, Deep Learning, NLP, Computer Vision",
-              "<strong>Sviluppo Software:</strong> Architetture scalabili, microservizi, API design",
-              "<strong>Hardware & IoT:</strong> Sistemi embedded, sensori, integrazione hardware-software",
-              "<strong>Cloud & DevOps:</strong> AWS, Azure, Docker, Kubernetes, CI/CD",
-              "<strong>Data Engineering:</strong> Big Data, ETL, real-time processing"
+            title: "Consulenza & Leadership Tecnica",
+            intro: "Oltre 10 anni di esperienza nel guidare trasformazioni digitali complesse, con un focus su AI e innovazione sistemica.",
+            expertise: "Expertise Tecnica",
+            approach: "Approccio Distintivo",
+            approachDesc: "Integro rigore tecnico con pensiero sistemico e creatività. Utilizzo pattern recognition avanzato per identificare soluzioni non ovvie e sostenibili.",
+            results: "Risultati Tipici",
+            cta: "Discutiamo il Tuo Progetto",
+            expertiseList: [
+              "Architetture AI/ML: Deep Learning, NLP, Computer Vision",
+              "Cloud & DevOps: AWS, Azure, Kubernetes, CI/CD",
+              "Systems Design: Microservizi, Event-driven, Scalabilità",
+              "Data Engineering: Big Data, Real-time Processing",
+              "Team Leadership: Agile, Scrum, Technical Mentoring"
             ],
+            resultsList: [
+              "Riduzione 30-40% time-to-market",
+              "Incremento 50% efficienza operativa",
+              "ROI misurabili entro 6 mesi",
+              "Team performance improvement 2x",
+              "Scalabilità 10x senza refactoring"
+            ]
+          },
+          creative: {
+            title: "Creative Technology & Design",
+            intro: "L'innovazione più radicale nasce quando tecnologia e creatività convergono. Sviluppo progetti che trasformano dati e algoritmi in esperienze significative.",
+            services: "Servizi Creativi",
+            process: "Processo Creativo",
+            processDesc: "Ogni progetto inizia con l'ascolto profondo del contesto e degli obiettivi, seguito da prototipazione rapida e iterazione continua fino alla soluzione ottimale.",
+            applications: "Applicazioni",
+            cta: "Esploriamo le Possibilità",
             servicesList: [
-              "Technical Leadership e mentoring team di sviluppo",
-              "Project Management per progetti innovativi",
-              "Architettura di soluzioni enterprise",
-              "Consulenza strategica per trasformazione digitale",
-              "Proof of Concept e prototipi rapidi",
-              "Code review e ottimizzazione performance"
-            ]
-          },
-          art: {
-            title: "Collaborazioni Artistiche",
-            intro: "L'arte e la tecnologia non sono mondi separati. Creo ponti tra questi universi, sviluppando progetti che esplorano l'intersezione tra codice e creatività.",
-            types: "Tipologie di Progetti",
-            collab: "Collaborazioni",
-            collabDesc: "Lavoro con artisti, musicisti, designer e curatori per:",
-            philosophy: "Ogni progetto è un'opportunità per esplorare nuovi linguaggi espressivi attraverso la tecnologia.",
-            cta: "Proponi Collaborazione",
-            typesList: [
-              "Installazioni interattive con sensori e proiezioni",
-              "Arte generativa e algoritmica",
-              "Visualizzazioni di dati artistiche",
-              "Performance audiovisive con controllo real-time",
-              "Realtà aumentata e virtuale per esperienze immersive"
+              "Installazioni interattive per musei e eventi",
+              "Data visualization artistica e infografiche dinamiche",
+              "Generative art e algoritmi creativi",
+              "Workshop di creative coding e computational thinking",
+              "Experience design per spazi fisici e digitali"
             ],
-            collabList: [
-              "Consulenza tecnica per progetti artistici complessi",
-              "Sviluppo software custom per installazioni",
-              "Workshop su creative coding e new media art",
-              "Co-creazione di concept innovativi"
+            applicationsList: [
+              "Brand activation e marketing esperienziale",
+              "Educational technology e learning interattivo",
+              "Cultural heritage e digital humanities",
+              "Corporate innovation labs",
+              "Art & Science collaborations"
             ]
           },
-          iching: {
-            title: "Letture I Ching",
-            intro: "L'I Ching, il Libro dei Mutamenti, è uno dei più antichi testi di saggezza dell'umanità. Offro letture personalizzate che combinano l'antica tradizione con una comprensione contemporanea.",
-            what: "Cos'è l'I Ching",
-            whatDesc: "Un sistema oracolare e filosofico basato su 64 esagrammi che rappresentano situazioni archetipiche della vita umana. Ogni consultazione offre:",
-            how: "Come Funziona",
-            philosophy: "Le letture sono offerte a donazione libera. L'I Ching mi ha guidato anche nelle decisioni tecniche e creative più complesse.",
-            cta: "Richiedi Lettura",
-            donate: "Donazione PayPal",
-            offersList: [
-              "Prospettive profonde sulla situazione attuale",
-              "Consigli per navigare cambiamenti e decisioni",
-              "Comprensione delle dinamiche sottostanti",
-              "Indicazioni su tempistiche e sviluppi futuri"
+          strategic: {
+            title: "Strategic Problem Solving",
+            intro: "Applico metodologie sistemiche uniche per decodificare complessità organizzative e facilitare decisioni strategiche in contesti di incertezza.",
+            methods: "Metodologie",
+            iching: "I Ching nel Business",
+            ichingDesc: "L'I Ching è un sistema di pattern recognition con 3000 anni di storia. Lo applico come framework decisionale per navigare transizioni e identificare opportunità nascoste nei momenti di cambiamento.",
+            benefits: "Benefici",
+            cta: "Analizziamo la Situazione",
+            methodsList: [
+              "Systems Thinking e Complexity Analysis",
+              "Pattern Recognition attraverso I Ching",
+              "Design Thinking e Human-Centered Design",
+              "Scenario Planning e Future Mapping",
+              "Change Management Facilitation"
             ],
-            processList: [
-              "Inviami la tua domanda via email",
-              "Eseguo il lancio tradizionale delle monete",
-              "Interpreto l'esagramma risultante",
-              "Ti invio una lettura dettagliata e personalizzata"
-            ]
-          },
-          massage: {
-            title: "Massaggio Svedese",
-            intro: "Il corpo è il primo strumento della nostra creatività e produttività. Offro massaggi svedesi professionali per il benessere psicofisico completo.",
-            benefits: "Benefici del Massaggio Svedese",
-            approach: "L'Approccio",
-            approachDesc: "Ogni sessione è personalizzata e integra:",
-            practical: "Informazioni Pratiche",
-            philosophy: "Il massaggio è per me una forma di meditazione attiva che beneficia sia chi lo riceve che chi lo pratica.",
-            cta: "Prenota Sessione",
             benefitsList: [
-              "Rilassamento profondo del sistema nervoso",
-              "Riduzione di stress e tensioni muscolari",
-              "Miglioramento della circolazione sanguigna",
-              "Aumento della flessibilità e mobilità",
-              "Riequilibrio energetico generale"
-            ],
-            approachList: [
-              "Tecniche classiche svedesi",
-              "Attenzione ai punti di tensione specifici",
-              "Ambiente rilassante e professionale",
-              "Durata: 60 o 90 minuti"
-            ],
-            practicalInfo: "<strong>Dove:</strong> Napoli e dintorni<br><strong>Su appuntamento</strong><br><strong>Prezzi:</strong> Da concordare in base alla durata"
+              "Chiarezza decisionale in contesti complessi",
+              "Identificazione di opportunità non ovvie",
+              "Riduzione del rischio strategico",
+              "Allineamento team su visione condivisa",
+              "Innovazione breakthrough vs incrementale"
+            ]
           }
         }
       },
       en: {
         nav: {
           home: "Home",
+          approach: "Approach",
           services: "Services",
           portfolio: "Portfolio",
-          iching: "I Ching",
-          massage: "Massage",
+          about: "About",
+          wellness: "Wellness",
           contact: "Contact"
         },
         hero: {
-          title: "Where Technology and Spirituality Meet",
-          subtitle: "AI Engineer • Artistic Collaborator • I Ching Practitioner • Swedish Massage Therapist",
-          cta: "Explore Services"
+          badge: "SYSTEMS ENGINEER",
+          title: "I Decode Complex Patterns",
+          subtitle: "Whether it's software architectures, creative systems, or human dynamics,<br>I apply the same systemic approach to find innovative solutions.",
+          tagline: '"True innovation comes from integrating different perspectives"',
+          cta1: "Explore Services",
+          cta2: "My Approach"
+        },
+        approach: {
+          title: "A Unique Approach to Problem Solving",
+          subtitle: "Ten years of experience taught me that complex problems require more than one perspective. Here's how I integrate different disciplines to create value.",
+          analytical: {
+            title: "Systemic Analysis",
+            desc: "I break down complex systems into understandable components, identifying hidden patterns and connections through advanced tech methodologies."
+          },
+          creative: {
+            title: "Creative Synthesis",
+            desc: "I combine technology and intuition to generate original solutions, using art and design thinking as innovation catalysts."
+          },
+          holistic: {
+            title: "Holistic Vision",
+            desc: "I consider the human and organizational context, integrating systemic wisdom for sustainable, people-centered solutions."
+          }
         },
         services: {
-          title: "Services",
+          title: "Professional Services",
+          subtitle: "From technology consulting to creative facilitation, each service is designed to solve specific challenges with an integrated approach.",
           tech: {
-            title: "Technology Consulting",
-            desc: "Technical leadership, project management, and innovative solutions in AI, software, and hardware"
+            category: "TECHNOLOGY",
+            title: "Technical Consulting & Leadership",
+            desc: "I guide complex technology teams and projects, specializing in AI architectures, digital transformation, and systemic innovation.",
+            f1: "AI and Machine Learning Architectures",
+            f2: "Technical Leadership & Team Building",
+            f3: "Digital Transformation Strategy",
+            f4: "Systems Architecture & Integration"
           },
-          art: {
-            title: "Artistic Collaborations",
-            desc: "Bridging technology and art to create unique experiences and innovative multimedia projects"
+          creative: {
+            category: "INNOVATION",
+            title: "Creative Technology & Design",
+            desc: "I develop projects at the intersection of art and technology, creating innovative experiences and interactive installations.",
+            f1: "Interactive installations and new media art",
+            f2: "Creative coding and generative art",
+            f3: "Design thinking workshops",
+            f4: "Innovation consulting"
           },
-          iching: {
-            title: "I Ching Readings",
-            desc: "Personalized consultations through the ancient wisdom of the Book of Changes"
-          },
-          massage: {
-            title: "Swedish Massage",
-            desc: "Holistic treatments for deep relaxation and energetic rebalancing"
+          strategic: {
+            category: "STRATEGY",
+            title: "Strategic Problem Solving",
+            desc: "I apply advanced systemic methodologies to solve complex organizational challenges and facilitate strategic decisions.",
+            f1: "Organizational systemic analysis",
+            f2: "Decision facilitation with I Ching",
+            f3: "Pattern recognition consulting",
+            f4: "Change management support"
           }
         },
         portfolio: {
-          title: "Portfolio",
+          title: "Selected Projects",
+          subtitle: "A selection of projects demonstrating the integrated approach to problem solving.",
           project1: {
-            title: "Neural Art Generator",
-            desc: "Artistic generation system based on neural networks"
+            title: "AI-Driven Supply Chain",
+            desc: "Predictive system that reduced costs by 30% integrating ML and systemic wisdom"
           },
           project2: {
-            title: "Interactive Installation",
-            desc: "Generative art responding to human presence"
+            title: "Interactive Data Sculpture",
+            desc: "Installation visualizing organizational patterns through generative art"
           },
           project3: {
-            title: "Spiritual Concept",
-            desc: "Visualization of metaphysical concepts through algorithms"
+            title: "Digital Transformation Framework",
+            desc: "Proprietary methodology integrating tech, creativity, and human factor"
           }
         },
-        iching: {
-          title: "I Ching",
-          desc: "The I Ching, or Book of Changes, is an ancient wisdom system offering deep insights into life situations. Through hexagram consultation, we can find clarity and direction in our path.",
-          info: "Send your question to receive a personalized reading. Free-will offering through PayPal.",
-          cta: "Request a Reading",
-          donate: "PayPal Donation"
+        about: {
+          title: "The Journey",
+          intro: "My professional journey has been driven by curiosity about the patterns governing complex systems - from code to creativity, from technology to the human dimension.",
+          experience: "With over 10 years as a technology consultant, I've learned that the most effective solutions arise when we transcend disciplinary boundaries. I've led development teams, designed AI architectures, while exploring how contemplative and creative practices can enhance technological innovation.",
+          t1: {
+            title: "Engineering & Technology",
+            desc: "Foundation in computer science, specialization in AI and distributed systems"
+          },
+          t2: {
+            title: "Leadership & Consulting",
+            desc: "10+ years leading digital transformation projects for enterprises"
+          },
+          t3: {
+            title: "Art & Creativity",
+            desc: "Exploration of new media art and creative coding as innovation tools"
+          },
+          t4: {
+            title: "Systemic Integration",
+            desc: "Study of I Ching and holistic practices for advanced decision-making"
+          }
         },
-        massage: {
-          title: "Swedish Massage",
-          desc: "Swedish massage is a holistic practice combining deep relaxation techniques with the body's energetic rebalancing. Each session is personalized to meet your specific needs, creating a space of total wellbeing.",
-          info: "Sessions available by appointment in Naples and surrounding areas.",
-          cta: "Book a Session"
+        wellness: {
+          title: "Performance & Wellness",
+          intro: "For professionals who understand that optimal performance requires balance. I offer complementary services based on millenary practices, adapted to the contemporary context.",
+          iching: {
+            title: "I Ching for Decision Making",
+            desc: "Strategic consulting sessions using the ancient pattern recognition system to navigate complex decisions and transitions.",
+            cta: "Learn More"
+          },
+          massage: {
+            title: "Massage for Performance",
+            desc: "Professional Swedish massage sessions to manage stress, improve focus, and maintain psychophysical balance.",
+            cta: "Book Session"
+          }
         },
         contact: {
-          title: "Contact",
+          title: "Let's Start a Conversation",
+          intro: "Whether you're looking for a tech consultant, a creative partner, or an innovative approach to your projects, I'm here to listen and collaborate.",
           email: "Email:",
-          location: "Location:",
+          location: "Base:",
           city: "Naples, Italy",
-          quote: '"True wisdom comes from integrating all dimensions of being"'
+          availability: "Availability:",
+          remote: "Local and remote projects"
         },
         footer: {
           rights: "All rights reserved."
         },
         modal: {
           tech: {
-            title: "Technology Consulting",
-            intro: "With over 10 years of experience as a technology consultant, I offer multidisciplinary expertise spanning from artificial intelligence to complex project management.",
-            areas: "Areas of Expertise",
-            services: "Services Offered",
-            philosophy: "My philosophy integrates technical rigor and creativity, also using contemplative practices to enhance problem-solving and innovation.",
-            cta: "Request Consultation",
-            areasList: [
-              "<strong>Artificial Intelligence:</strong> Machine Learning, Deep Learning, NLP, Computer Vision",
-              "<strong>Software Development:</strong> Scalable architectures, microservices, API design",
-              "<strong>Hardware & IoT:</strong> Embedded systems, sensors, hardware-software integration",
-              "<strong>Cloud & DevOps:</strong> AWS, Azure, Docker, Kubernetes, CI/CD",
-              "<strong>Data Engineering:</strong> Big Data, ETL, real-time processing"
+            title: "Technical Consulting & Leadership",
+            intro: "Over 10 years of experience leading complex digital transformations, with a focus on AI and systemic innovation.",
+            expertise: "Technical Expertise",
+            approach: "Distinctive Approach",
+            approachDesc: "I integrate technical rigor with systemic thinking and creativity. I use advanced pattern recognition to identify non-obvious and sustainable solutions.",
+            results: "Typical Results",
+            cta: "Let's Discuss Your Project",
+            expertiseList: [
+              "AI/ML Architectures: Deep Learning, NLP, Computer Vision",
+              "Cloud & DevOps: AWS, Azure, Kubernetes, CI/CD",
+              "Systems Design: Microservices, Event-driven, Scalability",
+              "Data Engineering: Big Data, Real-time Processing",
+              "Team Leadership: Agile, Scrum, Technical Mentoring"
             ],
+            resultsList: [
+              "30-40% time-to-market reduction",
+              "50% operational efficiency increase",
+              "Measurable ROI within 6 months",
+              "2x team performance improvement",
+              "10x scalability without refactoring"
+            ]
+          },
+          creative: {
+            title: "Creative Technology & Design",
+            intro: "The most radical innovation happens when technology and creativity converge. I develop projects that transform data and algorithms into meaningful experiences.",
+            services: "Creative Services",
+            process: "Creative Process",
+            processDesc: "Each project begins with deep listening to context and objectives, followed by rapid prototyping and continuous iteration until the optimal solution.",
+            applications: "Applications",
+            cta: "Let's Explore Possibilities",
             servicesList: [
-              "Technical Leadership and development team mentoring",
-              "Project Management for innovative projects",
-              "Enterprise solution architecture",
-              "Strategic consulting for digital transformation",
-              "Proof of Concept and rapid prototypes",
-              "Code review and performance optimization"
-            ]
-          },
-          art: {
-            title: "Artistic Collaborations",
-            intro: "Art and technology are not separate worlds. I create bridges between these universes, developing projects that explore the intersection of code and creativity.",
-            types: "Project Types",
-            collab: "Collaborations",
-            collabDesc: "I work with artists, musicians, designers, and curators for:",
-            philosophy: "Each project is an opportunity to explore new expressive languages through technology.",
-            cta: "Propose Collaboration",
-            typesList: [
-              "Interactive installations with sensors and projections",
-              "Generative and algorithmic art",
-              "Artistic data visualizations",
-              "Audiovisual performances with real-time control",
-              "Augmented and virtual reality for immersive experiences"
+              "Interactive installations for museums and events",
+              "Artistic data visualization and dynamic infographics",
+              "Generative art and creative algorithms",
+              "Creative coding and computational thinking workshops",
+              "Experience design for physical and digital spaces"
             ],
-            collabList: [
-              "Technical consulting for complex artistic projects",
-              "Custom software development for installations",
-              "Workshops on creative coding and new media art",
-              "Co-creation of innovative concepts"
+            applicationsList: [
+              "Brand activation and experiential marketing",
+              "Educational technology and interactive learning",
+              "Cultural heritage and digital humanities",
+              "Corporate innovation labs",
+              "Art & Science collaborations"
             ]
           },
-          iching: {
-            title: "I Ching Readings",
-            intro: "The I Ching, the Book of Changes, is one of humanity's oldest wisdom texts. I offer personalized readings that combine ancient tradition with contemporary understanding.",
-            what: "What is the I Ching",
-            whatDesc: "An oracular and philosophical system based on 64 hexagrams representing archetypal situations of human life. Each consultation offers:",
-            how: "How It Works",
-            philosophy: "Readings are offered on a donation basis. The I Ching has also guided me in the most complex technical and creative decisions.",
-            cta: "Request Reading",
-            donate: "PayPal Donation",
-            offersList: [
-              "Deep perspectives on the current situation",
-              "Advice for navigating changes and decisions",
-              "Understanding of underlying dynamics",
-              "Indications on timing and future developments"
+          strategic: {
+            title: "Strategic Problem Solving",
+            intro: "I apply unique systemic methodologies to decode organizational complexity and facilitate strategic decisions in uncertain contexts.",
+            methods: "Methodologies",
+            iching: "I Ching in Business",
+            ichingDesc: "The I Ching is a pattern recognition system with 3000 years of history. I apply it as a decision framework to navigate transitions and identify hidden opportunities in moments of change.",
+            benefits: "Benefits",
+            cta: "Let's Analyze the Situation",
+            methodsList: [
+              "Systems Thinking and Complexity Analysis",
+              "Pattern Recognition through I Ching",
+              "Design Thinking and Human-Centered Design",
+              "Scenario Planning and Future Mapping",
+              "Change Management Facilitation"
             ],
-            processList: [
-              "Send me your question via email",
-              "I perform the traditional coin toss",
-              "I interpret the resulting hexagram",
-              "I send you a detailed and personalized reading"
-            ]
-          },
-          massage: {
-            title: "Swedish Massage",
-            intro: "The body is the primary instrument of our creativity and productivity. I offer professional Swedish massages for complete psychophysical wellbeing.",
-            benefits: "Benefits of Swedish Massage",
-            approach: "The Approach",
-            approachDesc: "Each session is personalized and integrates:",
-            practical: "Practical Information",
-            philosophy: "Massage is for me a form of active meditation that benefits both the receiver and the practitioner.",
-            cta: "Book Session",
             benefitsList: [
-              "Deep relaxation of the nervous system",
-              "Reduction of stress and muscle tension",
-              "Improved blood circulation",
-              "Increased flexibility and mobility",
-              "General energetic rebalancing"
-            ],
-            approachList: [
-              "Classic Swedish techniques",
-              "Attention to specific tension points",
-              "Relaxing and professional environment",
-              "Duration: 60 or 90 minutes"
-            ],
-            practicalInfo: "<strong>Where:</strong> Naples and surrounding areas<br><strong>By appointment</strong><br><strong>Prices:</strong> To be agreed based on duration"
+              "Decision clarity in complex contexts",
+              "Identification of non-obvious opportunities",
+              "Strategic risk reduction",
+              "Team alignment on shared vision",
+              "Breakthrough vs incremental innovation"
+            ]
           }
         }
       }
@@ -1362,6 +1625,8 @@
         if (translation) {
           if (element.tagName === 'A' && element.classList.contains('btn')) {
             element.textContent = translation;
+          } else if (element.tagName === 'LI') {
+            element.innerHTML = translation;
           } else {
             element.innerHTML = translation;
           }
@@ -1373,8 +1638,8 @@
       
       // Update page title
       document.title = currentLang === 'it' 
-        ? 'Exposed Project - Ingegnere AI & Praticante Olistico'
-        : 'Exposed Project - AI Engineer & Holistic Practitioner';
+        ? 'Exposed Project - Systems Engineer & Innovation Consultant'
+        : 'Exposed Project - Systems Engineer & Innovation Consultant';
     }
 
     // Helper function to get nested properties
@@ -1387,47 +1652,33 @@
       const t = translations[currentLang].modal;
       
       // Tech modal
-      const techAreas = document.getElementById('tech-areas');
-      const techServices = document.getElementById('tech-services');
-      if (techAreas) {
-        techAreas.innerHTML = t.tech.areasList.map(item => `<li>${item}</li>`).join('');
+      const techExpertise = document.getElementById('tech-expertise');
+      const techResults = document.getElementById('tech-results');
+      if (techExpertise) {
+        techExpertise.innerHTML = t.tech.expertiseList.map(item => `<li>${item}</li>`).join('');
       }
-      if (techServices) {
-        techServices.innerHTML = t.tech.servicesList.map(item => `<li>${item}</li>`).join('');
-      }
-      
-      // Art modal
-      const artTypes = document.getElementById('art-types');
-      const artCollab = document.getElementById('art-collab');
-      if (artTypes) {
-        artTypes.innerHTML = t.art.typesList.map(item => `<li>${item}</li>`).join('');
-      }
-      if (artCollab) {
-        artCollab.innerHTML = t.art.collabList.map(item => `<li>${item}</li>`).join('');
+      if (techResults) {
+        techResults.innerHTML = t.tech.resultsList.map(item => `<li>${item}</li>`).join('');
       }
       
-      // I Ching modal
-      const ichingOffers = document.getElementById('iching-offers');
-      const ichingProcess = document.getElementById('iching-process');
-      if (ichingOffers) {
-        ichingOffers.innerHTML = t.iching.offersList.map(item => `<li>${item}</li>`).join('');
+      // Creative modal
+      const creativeServices = document.getElementById('creative-services');
+      const creativeApps = document.getElementById('creative-applications');
+      if (creativeServices) {
+        creativeServices.innerHTML = t.creative.servicesList.map(item => `<li>${item}</li>`).join('');
       }
-      if (ichingProcess) {
-        ichingProcess.innerHTML = t.iching.processList.map(item => `<li>${item}</li>`).join('');
+      if (creativeApps) {
+        creativeApps.innerHTML = t.creative.applicationsList.map(item => `<li>${item}</li>`).join('');
       }
       
-      // Massage modal
-      const massageBenefits = document.getElementById('massage-benefits');
-      const massageApproach = document.getElementById('massage-approach');
-      const massagePractical = document.getElementById('massage-practical');
-      if (massageBenefits) {
-        massageBenefits.innerHTML = t.massage.benefitsList.map(item => `<li>${item}</li>`).join('');
+      // Strategic modal
+      const strategicMethods = document.getElementById('strategic-methods');
+      const strategicBenefits = document.getElementById('strategic-benefits');
+      if (strategicMethods) {
+        strategicMethods.innerHTML = t.strategic.methodsList.map(item => `<li>${item}</li>`).join('');
       }
-      if (massageApproach) {
-        massageApproach.innerHTML = t.massage.approachList.map(item => `<li>${item}</li>`).join('');
-      }
-      if (massagePractical) {
-        massagePractical.innerHTML = t.massage.practicalInfo;
+      if (strategicBenefits) {
+        strategicBenefits.innerHTML = t.strategic.benefitsList.map(item => `<li>${item}</li>`).join('');
       }
     }
 
