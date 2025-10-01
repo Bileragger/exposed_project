@@ -370,7 +370,7 @@
     /* Contact */
     .contact-content {
       text-align: center;
-      max-width: 500px;
+      max-width: 600px;
       margin: 0 auto;
     }
     
@@ -381,6 +381,55 @@
     .contact-info p {
       margin: 0.5rem 0;
       color: var(--gray-dark);
+    }
+    
+    /* Donation Box */
+    .donation-box {
+      background: var(--gray-light);
+      padding: 2rem;
+      margin: 3rem 0;
+      border-left: 3px solid var(--accent);
+    }
+    
+    .donation-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--black);
+    }
+    
+    .donation-box p {
+      color: var(--gray-dark);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    
+    .btn-donation {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 2.5rem;
+      background: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: var(--transition);
+      border: none;
+      box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+    }
+    
+    .btn-donation:hover {
+      background: #b89750;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 169, 97, 0.4);
+    }
+    
+    .btn-donation svg {
+      width: 24px;
+      height: 24px;
     }
     
     .social-links {
@@ -417,18 +466,6 @@
     .btn:hover {
       background: transparent;
       color: var(--black);
-    }
-    
-    .btn-outline {
-      background: transparent;
-      color: var(--black);
-      border: 1px solid var(--black);
-      margin-left: 1rem;
-    }
-    
-    .btn-outline:hover {
-      background: var(--black);
-      color: var(--white);
     }
     
     /* Footer */
@@ -515,9 +552,8 @@
         grid-template-columns: 1fr;
       }
       
-      .btn-outline {
-        margin-left: 0;
-        margin-top: 1rem;
+      .donation-box {
+        padding: 1.5rem;
       }
     }
   </style>
@@ -727,7 +763,22 @@
         <p><strong>Email:</strong> simone@exposedproject.com</p>
         <p><strong data-i18n="contact.studio">Studio:</strong> <span data-i18n="contact.city">Napoli, Italia</span></p>
         <p data-i18n="contact.availability">Sessioni in presenza e online</p>
-        <p data-i18n="contact.donation">Offerta libera per letture I Ching</p>
+      </div>
+      
+      <!-- Donation Box -->
+      <div class="donation-box">
+        <h3 data-i18n="donation.title">Hai ricevuto un consulto I Ching?</h3>
+        <p data-i18n="donation.text">
+          Se hai già beneficiato di una lettura I Ching, puoi effettuare una donazione 
+          libera che senti adeguata al valore del consulto ricevuto. Il tuo contributo 
+          sostiene questo lavoro e permette di continuare a offrire queste pratiche.
+        </p>
+        <a href="https://paypal.me/tuonome" class="btn-donation" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.419c.041-.27.269-.466.542-.466h7.013c2.312 0 4.061.56 5.201 1.664 1.047 1.017 1.583 2.499 1.498 4.135-.018.354-.054.693-.104 1.018-.052.333-.127.649-.218.951a6.83 6.83 0 0 1-.378.942c-.164.318-.356.619-.576.903a6.86 6.86 0 0 1-.759.801 5.835 5.835 0 0 1-.969.681c-.367.206-.765.378-1.192.512-.431.136-.908.204-1.425.204H10.89c-.306 0-.592.17-.732.444l-.039.07-.575 3.642-.024.115c-.021.123-.087.234-.186.314a.554.554 0 0 1-.325.102m7.276-15.26h-3.819l.002.013c-.256 1.637-1.56 2.208-3.099 2.208H6.024L4.19 20.133h2.235l.449-2.84c.034-.216.214-.376.433-.376h.998c1.824 0 3.25-.743 3.668-2.892.013-.065.024-.129.034-.194a2.08 2.08 0 0 0-.31-1.427 2.7 2.7 0 0 0-2.184-1.078"/>
+          </svg>
+          <span data-i18n="donation.cta">Effettua una Donazione</span>
+        </a>
       </div>
       
       <div class="social-links">
@@ -743,16 +794,10 @@
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
           </svg>
         </a>
-        <a href="https://paypal.me/tuonome" title="PayPal">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.419c.041-.27.269-.466.542-.466h7.013c2.312 0 4.061.56 5.201 1.664 1.047 1.017 1.583 2.499 1.498 4.135-.018.354-.054.693-.104 1.018-.052.333-.127.649-.218.951a6.83 6.83 0 0 1-.378.942c-.164.318-.356.619-.576.903a6.86 6.86 0 0 1-.759.801 5.835 5.835 0 0 1-.969.681c-.367.206-.765.378-1.192.512-.431.136-.908.204-1.425.204H10.89c-.306 0-.592.17-.732.444l-.039.07-.575 3.642-.024.115c-.021.123-.087.234-.186.314a.554.554 0 0 1-.325.102m7.276-15.26h-3.819l.002.013c-.256 1.637-1.56 2.208-3.099 2.208H6.024L4.19 20.133h2.235l.449-2.84c.034-.216.214-.376.433-.376h.998c1.824 0 3.25-.743 3.668-2.892.013-.065.024-.129.034-.194a2.08 2.08 0 0 0-.31-1.427 2.7 2.7 0 0 0-2.184-1.078"/>
-          </svg>
-        </a>
       </div>
       
       <div style="margin-top: 3rem;">
-        <a href="mailto:simone@exposedproject.com" class="btn" data-i18n="contact.cta1">Contattami</a>
-        <a href="https://calendly.com/simone-exposed" class="btn-outline" data-i18n="contact.cta2">Prenota Online</a>
+        <a href="mailto:simone@exposedproject.com" class="btn" data-i18n="contact.cta">Contattami</a>
       </div>
     </div>
   </section>
@@ -838,9 +883,12 @@
           studio: "Studio:",
           city: "Napoli, Italia",
           availability: "Sessioni in presenza e online",
-          donation: "Offerta libera per letture I Ching",
-          cta1: "Contattami",
-          cta2: "Prenota Online"
+          cta: "Contattami"
+        },
+        donation: {
+          title: "Hai ricevuto un consulto I Ching?",
+          text: "Se hai già beneficiato di una lettura I Ching, puoi effettuare una donazione libera che senti adeguata al valore del consulto ricevuto. Il tuo contributo sostiene questo lavoro e permette di continuare a offrire queste pratiche.",
+          cta: "Effettua una Donazione"
         },
         footer: {
           home: "Home",
@@ -914,9 +962,12 @@
           studio: "Studio:",
           city: "Naples, Italy",
           availability: "In-person and online sessions",
-          donation: "Free-will offering for I Ching readings",
-          cta1: "Contact Me",
-          cta2: "Book Online"
+          cta: "Contact Me"
+        },
+        donation: {
+          title: "Have you received an I Ching reading?",
+          text: "If you have already benefited from an I Ching reading, you can make a free-will donation that feels appropriate to the value of the consultation received. Your contribution supports this work and allows me to continue offering these practices.",
+          cta: "Make a Donation"
         },
         footer: {
           home: "Home",
