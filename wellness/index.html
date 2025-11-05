@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simone Esposito - Wellness & Awareness</title>
-  <meta name="description" content="Practitioner olistico certificato. Massaggio svedese e letture I Ching per l'equilibrio psicofisico.">
+  <meta name="description" content="Massaggio svedese e letture I Ching a Napoli.">
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3Cpolygon points='16,6 26,16 16,26 6,16' fill='none' stroke='%23c9a961' stroke-width='1'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23ffffff'/%3E%3C/svg%3E">
   <style>
@@ -243,273 +243,134 @@
     
     .service-details {
       list-style: none;
-      text-align: left;
-      max-width: 300px;
-      margin: 0 auto;
+      color: var(--gray-medium);
+      font-size: 0.9rem;
     }
     
     .service-details li {
       padding: 0.5rem 0;
-      color: var(--gray-dark);
-      font-size: 0.9rem;
-      border-bottom: 1px solid var(--gray-light);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
     }
     
-    .certification-note {
+    .service-details li:last-child {
+      border-bottom: none;
+    }
+    
+    .service-note {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    /* Pricing Section */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      padding: 2rem;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 8px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .pricing-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .pricing-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-card .price {
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin: 1rem 0;
+    }
+
+    .pricing-card .duration {
+      color: var(--gray-medium);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-card .note {
       font-size: 0.85rem;
       color: var(--gray-medium);
       font-style: italic;
       margin-top: 1rem;
     }
-    
-    /* Approach */
-    .approach-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .approach-item {
-      text-align: center;
-    }
-    
-    .approach-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      color: var(--gray-light);
-      margin-bottom: 1rem;
-    }
-    
-    .approach-item h4 {
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-    }
-    
-    .approach-item p {
-      color: var(--gray-medium);
-      font-size: 0.9rem;
-    }
-    
-    /* Sessions Grid */
-    .sessions-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-    
-    .session-item {
-      position: relative;
-      aspect-ratio: 1;
-      background: var(--white);
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      text-align: center;
-    }
-    
-    .session-item:hover {
-      border-color: var(--accent);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    }
-    
-    .session-icon {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 1.5rem;
-      color: var(--black);
-      opacity: 0.8;
-      transition: var(--transition);
-    }
-    
-    .session-item:hover .session-icon {
-      color: var(--accent);
-      transform: scale(1.05);
-    }
-    
-    .session-type {
-      color: var(--accent);
-      font-size: 0.75rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: 2px;
-      font-weight: 500;
-    }
-    
-    .session-title {
-      color: var(--black);
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .session-duration {
-      color: var(--gray-medium);
-      font-size: 0.85rem;
-    }
-    
-    /* About */
+
+    /* About Section */
     .about-content {
       max-width: 700px;
       margin: 0 auto;
       text-align: center;
     }
-    
+
     .about-content p {
       color: var(--gray-dark);
+      font-size: 1rem;
       line-height: 1.8;
       margin-bottom: 1.5rem;
     }
     
-    .philosophy-quote {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-style: italic;
-      margin: 3rem 0;
-      padding: 2rem;
-      border-left: 3px solid var(--accent);
-      text-align: left;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    /* Contact */
-    .contact-content {
+    /* Contact Section */
+    .contact-info {
       text-align: center;
       max-width: 600px;
-      margin: 0 auto;
-    }
-    
-    .contact-info {
-      margin-bottom: 3rem;
+      margin: 0 auto 3rem;
     }
     
     .contact-info p {
-      margin: 0.5rem 0;
-      color: var(--gray-dark);
-    }
-    
-    /* Pricing Box */
-    .pricing-box {
-      background: var(--gray-light);
-      padding: 2rem;
-      margin: 3rem 0;
-      border-radius: 4px;
-    }
-    
-    .pricing-box h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      color: var(--black);
-    }
-    
-    .pricing-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    
-    .pricing-item:last-child {
-      border-bottom: none;
-    }
-    
-    .pricing-name {
-      font-weight: 400;
-      color: var(--gray-dark);
-    }
-    
-    .pricing-amount {
-      font-weight: 500;
-      color: var(--black);
-    }
-    
-    /* Donation Box */
-    .donation-box {
-      background: var(--gray-light);
-      padding: 2rem;
-      margin: 3rem 0;
-      border-left: 3px solid var(--accent);
-    }
-    
-    .donation-box h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      color: var(--black);
-    }
-    
-    .donation-box p {
-      color: var(--gray-dark);
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-    }
-    
-    .btn-donation {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      padding: 1rem 2.5rem;
-      background: var(--accent);
-      color: var(--white);
-      text-decoration: none;
+      color: var(--gray-medium);
       font-size: 1rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      transition: var(--transition);
-      border: none;
-      box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+      line-height: 1.8;
+      margin-bottom: 1rem;
     }
     
-    .btn-donation:hover {
-      background: #b89750;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(201, 169, 97, 0.4);
-    }
-    
-    .btn-donation svg {
-      width: 24px;
-      height: 24px;
-    }
-    
-    .social-links {
+    .contact-details {
       display: flex;
-      gap: 2rem;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
       justify-content: center;
-      margin-top: 2rem;
+      gap: 1rem;
+      font-size: 1rem;
     }
     
-    .social-links a {
-      color: var(--black);
-      transition: var(--transition);
-    }
-    
-    .social-links a:hover {
-      color: var(--accent);
-      transform: translateY(-2px);
+    .contact-item strong {
+      min-width: 100px;
+      text-align: right;
     }
     
     /* Buttons */
     .btn {
       display: inline-block;
-      padding: 0.8rem 2rem;
+      padding: 1rem 2.5rem;
       background: var(--black);
       color: var(--white);
       text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 400;
-      letter-spacing: 0.5px;
+      border-radius: 50px;
       transition: var(--transition);
-      border: 1px solid var(--black);
+      font-weight: 400;
+      font-size: 0.95rem;
+      border: 2px solid var(--black);
     }
     
     .btn:hover {
@@ -517,24 +378,65 @@
       color: var(--black);
     }
     
+    .btn-outline {
+      background: transparent;
+      color: var(--black);
+      border: 2px solid var(--black);
+      margin-left: 1rem;
+    }
+    
+    .btn-outline:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2.5rem;
+      background: #25D366;
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 50px;
+      transition: var(--transition);
+      font-weight: 400;
+      font-size: 0.95rem;
+      border: 2px solid #25D366;
+      margin-left: 1rem;
+    }
+
+    .btn-whatsapp:hover {
+      background: #128C7E;
+      border-color: #128C7E;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-whatsapp svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+    
     /* Footer */
     footer {
-      background: var(--gray-light);
       padding: 3rem 2rem;
+      background: var(--gray-light);
       text-align: center;
     }
     
     .footer-links {
       display: flex;
-      gap: 2rem;
       justify-content: center;
+      gap: 2rem;
+      list-style: none;
       margin-bottom: 1.5rem;
     }
     
     .footer-links a {
-      color: var(--gray-medium);
+      color: var(--gray-dark);
       text-decoration: none;
-      font-size: 0.9rem;
       transition: var(--transition);
     }
     
@@ -542,41 +444,36 @@
       color: var(--black);
     }
     
-    /* Responsive */
+    .copyright {
+      color: var(--gray-medium);
+      font-size: 0.9rem;
+    }
+    
+    /* Mobile Responsive */
     @media (max-width: 768px) {
-      .nav-wrapper {
-        gap: 1rem;
-      }
-      
-      .lang-switcher {
-        transform: scale(0.9);
-      }
-      
       .nav-links {
         position: fixed;
-        top: 0;
-        right: -100%;
-        width: 70%;
-        height: 100vh;
+        top: 76px;
+        left: -100%;
+        width: 100%;
         background: var(--white);
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: right 0.3s ease;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        gap: 1.5rem;
+        transition: var(--transition);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       }
       
       .nav-links.active {
-        right: 0;
+        left: 0;
       }
       
       .menu-toggle {
         display: flex;
-        z-index: 1001;
       }
       
       .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
+        transform: rotate(45deg) translate(5px, 5px);
       }
       
       .menu-toggle.active span:nth-child(2) {
@@ -584,32 +481,21 @@
       }
       
       .menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
+        transform: rotate(-45deg) translate(7px, -7px);
       }
       
       .services-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
       }
-      
-      .approach-grid {
+
+      .pricing-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
       }
       
-      .sessions-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-      
-      .donation-box, .pricing-box {
-        padding: 1.5rem;
-      }
-      
-      .pricing-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+      .btn-whatsapp {
+        margin-left: 0;
+        margin-top: 1rem;
       }
     }
   </style>
@@ -623,7 +509,7 @@
         <ul class="nav-links">
           <li><a href="#home" data-i18n="nav.home">Home</a></li>
           <li><a href="#services" data-i18n="nav.services">Servizi</a></li>
-          <li><a href="#sessions" data-i18n="nav.sessions">Sessioni</a></li>
+          <li><a href="#pricing" data-i18n="nav.pricing">Tariffe</a></li>
           <li><a href="#about" data-i18n="nav.about">Chi Sono</a></li>
           <li><a href="#contact" data-i18n="nav.contact">Contatti</a></li>
         </ul>
@@ -644,20 +530,36 @@
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1 data-i18n="hero.title">Wellness & Consapevolezza</h1>
-      <p class="subtitle" data-i18n="hero.subtitle">
-        Accompagno persone nel loro percorso di equilibrio attraverso 
-        pratiche millenarie e trattamenti professionali.
-      </p>
+      <h1 data-i18n="hero.title">Wellness & Awareness</h1>
+      <p class="subtitle" data-i18n="hero.subtitle">Massaggio svedese e letture I Ching a Napoli.</p>
       <a href="#contact" class="btn" data-i18n="hero.cta">Prenota Sessione</a>
     </div>
   </section>
 
   <!-- Services Section -->
   <section id="services">
-    <h2 data-i18n="services.title">Servizi & Pratiche</h2>
+    <h2 data-i18n="services.title">Servizi</h2>
     
     <div class="services-grid">
+      <div class="service-item">
+        <svg class="service-icon" viewBox="0 0 80 80">
+          <path d="M 20 40 Q 40 20, 60 40 T 100 40" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M 20 40 Q 40 60, 60 40 T 100 40" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="40" cy="40" r="3" fill="currentColor"/>
+        </svg>
+        <h3 data-i18n="services.massage.title">Massaggio Svedese</h3>
+        <p data-i18n="services.massage.desc">
+          Massaggiatore certificato, attualmente in fase di costruzione esperienza pratica post-formazione. Sessioni di rilassamento e benessere corporeo da 60 o 90 minuti.
+        </p>
+        <ul class="service-details">
+          <li data-i18n="services.massage.f1">Sessioni da 60 o 90 minuti</li>
+          <li data-i18n="services.massage.f2">Tecniche classiche svedesi</li>
+          <li data-i18n="services.massage.f3">Studio privato a Napoli</li>
+          <li data-i18n="services.massage.f4">Su appuntamento</li>
+        </ul>
+        <div class="service-note" data-i18n="services.massage.note">Tariffa introduttiva per nuovi clienti</div>
+      </div>
+      
       <div class="service-item">
         <svg class="service-icon" viewBox="0 0 80 80">
           <line x1="20" y1="20" x2="60" y2="20" stroke="currentColor" stroke-width="2"/>
@@ -670,146 +572,36 @@
         </svg>
         <h3 data-i18n="services.iching.title">I Ching</h3>
         <p data-i18n="services.iching.desc">
-          Letture personalizzate del Libro dei Mutamenti per navigare 
-          decisioni e transizioni. Pratica personale sviluppata in anni di studio.
+          Letture personalizzate del Libro dei Mutamenti per riflessione, insight e guida decisionale. Pratica spirituale personale sviluppata negli anni.
         </p>
         <ul class="service-details">
-          <li data-i18n="services.iching.f1">Consultazioni individuali</li>
+          <li data-i18n="services.iching.f1">Letture individuali</li>
           <li data-i18n="services.iching.f2">Interpretazione esagrammi</li>
-          <li data-i18n="services.iching.f3">Guida nei momenti di transizione</li>
-          <li data-i18n="services.iching.f4">Sessioni online disponibili</li>
+          <li data-i18n="services.iching.f3">Sessioni in presenza o online</li>
+          <li data-i18n="services.iching.f4">Richiesta via email</li>
         </ul>
-        <p class="certification-note" data-i18n="services.iching.note">Donazione libera</p>
-      </div>
-      
-      <div class="service-item">
-        <svg class="service-icon" viewBox="0 0 80 80">
-          <path d="M 20 40 Q 40 20, 60 40 T 100 40" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="M 20 40 Q 40 60, 60 40 T 100 40" fill="none" stroke="currentColor" stroke-width="2"/>
-          <circle cx="40" cy="40" r="3" fill="currentColor"/>
-        </svg>
-        <h3 data-i18n="services.massage.title">Massaggio Svedese</h3>
-        <p data-i18n="services.massage.desc">
-          Trattamenti professionali certificati per il rilassamento profondo 
-          e il riequilibrio del corpo.
-        </p>
-        <ul class="service-details">
-          <li data-i18n="services.massage.f1">Sessioni 60/90 minuti</li>
-          <li data-i18n="services.massage.f2">Tecniche classiche svedesi</li>
-          <li data-i18n="services.massage.f3">Oli essenziali naturali</li>
-          <li data-i18n="services.massage.f4">Ambiente rilassante</li>
-        </ul>
-        <p class="certification-note" data-i18n="services.massage.note">Operatore certificato</p>
-      </div>
-    </div>
-    
-    <div class="approach-grid">
-      <div class="approach-item">
-        <div class="approach-number">01</div>
-        <h4 data-i18n="approach.listen.title">Ascolto</h4>
-        <p data-i18n="approach.listen.desc">
-          Ogni percorso inizia con l'ascolto profondo delle tue esigenze
-        </p>
-      </div>
-      
-      <div class="approach-item">
-        <div class="approach-number">02</div>
-        <h4 data-i18n="approach.personalize.title">Personalizzazione</h4>
-        <p data-i18n="approach.personalize.desc">
-          Adatto le pratiche al tuo momento specifico di vita
-        </p>
-      </div>
-      
-      <div class="approach-item">
-        <div class="approach-number">03</div>
-        <h4 data-i18n="approach.integrate.title">Integrazione</h4>
-        <p data-i18n="approach.integrate.desc">
-          Ti supporto nell'integrare le pratiche nel quotidiano
-        </p>
+        <div class="service-note" data-i18n="services.iching.note">Offerta libera</div>
       </div>
     </div>
   </section>
 
-  <!-- Sessions Section -->
-  <section id="sessions">
-    <h2 data-i18n="sessions.title">Tipologie di Sessioni</h2>
-    
-    <div class="sessions-grid">
-      <div class="session-item">
-        <svg class="session-icon" viewBox="0 0 80 80">
-          <line x1="20" y1="25" x2="60" y2="25" stroke="currentColor" stroke-width="2"/>
-          <line x1="20" y1="35" x2="35" y2="35" stroke="currentColor" stroke-width="2"/>
-          <line x1="45" y1="35" x2="60" y2="35" stroke="currentColor" stroke-width="2"/>
-          <line x1="20" y1="45" x2="60" y2="45" stroke="currentColor" stroke-width="2"/>
-          <line x1="20" y1="55" x2="35" y2="55" stroke="currentColor" stroke-width="2"/>
-          <line x1="45" y1="55" x2="60" y2="55" stroke="currentColor" stroke-width="2"/>
-        </svg>
-        <div class="session-type" data-i18n="sessions.s1.type">I CHING</div>
-        <h3 class="session-title" data-i18n="sessions.s1.title">Lettura Classica</h3>
-        <p class="session-duration" data-i18n="sessions.s1.duration">60 minuti</p>
+  <!-- Pricing Section -->
+  <section id="pricing">
+    <h2 data-i18n="pricing.title">Tariffe</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3 data-i18n="pricing.massage">Massaggio Svedese</h3>
+        <div class="price">€30 / 60 min</div>
+        <div class="price" style="font-size: 1.5rem; margin-top: 0.5rem;">€45 / 90 min</div>
+        <div class="duration" data-i18n="pricing.massage_complete">(sessione completa)</div>
+        <div class="note" data-i18n="pricing.massage_note">Tariffa introduttiva per nuovi clienti</div>
       </div>
       
-      <div class="session-item">
-        <svg class="session-icon" viewBox="0 0 80 80">
-          <circle cx="25" cy="40" r="3" fill="currentColor"/>
-          <circle cx="40" cy="40" r="3" fill="currentColor"/>
-          <circle cx="55" cy="40" r="3" fill="currentColor"/>
-          <path d="M 25 40 Q 32 30, 40 40 T 55 40" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="15" y1="50" x2="30" y2="50" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="35" y1="50" x2="45" y2="50" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="50" y1="50" x2="65" y2="50" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <div class="session-type" data-i18n="sessions.s2.type">I CHING</div>
-        <h3 class="session-title" data-i18n="sessions.s2.title">Percorso Guidato</h3>
-        <p class="session-duration" data-i18n="sessions.s2.duration">3 sessioni</p>
-      </div>
-      
-      <div class="session-item">
-        <svg class="session-icon" viewBox="0 0 80 80">
-          <path d="M 20 45 Q 30 35, 40 45 T 60 45" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="M 20 50 Q 30 40, 40 50 T 60 50" fill="none" stroke="currentColor" stroke-width="2"/>
-          <circle cx="40" cy="30" r="3" fill="currentColor"/>
-        </svg>
-        <div class="session-type" data-i18n="sessions.s3.type">MASSAGGIO</div>
-        <h3 class="session-title" data-i18n="sessions.s3.title">Rilassamento Base</h3>
-        <p class="session-duration" data-i18n="sessions.s3.duration">60 minuti</p>
-      </div>
-      
-      <div class="session-item">
-        <svg class="session-icon" viewBox="0 0 80 80">
-          <circle cx="40" cy="40" r="25" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M 25 40 Q 32 30, 40 40 T 55 40" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M 25 40 Q 32 50, 40 40 T 55 40" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="40" cy="40" r="4" fill="currentColor"/>
-        </svg>
-        <div class="session-type" data-i18n="sessions.s4.type">MASSAGGIO</div>
-        <h3 class="session-title" data-i18n="sessions.s4.title">Trattamento Completo</h3>
-        <p class="session-duration" data-i18n="sessions.s4.duration">90 minuti</p>
-      </div>
-      
-      <div class="session-item">
-        <svg class="session-icon" viewBox="0 0 80 80">
-          <line x1="15" y1="30" x2="35" y2="30" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="45" y1="30" x2="65" y2="30" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M 20 45 Q 30 38, 40 45 T 60 45" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="40" cy="40" r="15" fill="none" stroke="currentColor" stroke-width="1"/>
-        </svg>
-        <div class="session-type" data-i18n="sessions.s5.type">INTEGRATO</div>
-        <h3 class="session-title" data-i18n="sessions.s5.title">Consulto + Massaggio</h3>
-        <p class="session-duration" data-i18n="sessions.s5.duration">120 minuti</p>
-      </div>
-      
-      <div class="session-item">
-        <svg class="session-icon" viewBox="0 0 80 80">
-          <rect x="25" y="25" width="30" height="30" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="30" y1="35" x2="50" y2="35" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="30" y1="40" x2="40" y2="40" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="30" y1="45" x2="45" y2="45" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="50" cy="35" r="2" fill="currentColor"/>
-        </svg>
-        <div class="session-type" data-i18n="sessions.s6.type">ONLINE</div>
-        <h3 class="session-title" data-i18n="sessions.s6.title">I Ching Remoto</h3>
-        <p class="session-duration" data-i18n="sessions.s6.duration">45 minuti</p>
+      <div class="pricing-card">
+        <h3 data-i18n="pricing.iching">Lettura I Ching</h3>
+        <div class="price" data-i18n="pricing.freewill">Offerta libera</div>
+        <div class="duration" data-i18n="pricing.iching_duration">Pratica spirituale</div>
+        <div class="note" data-i18n="pricing.iching_note">Donazione facoltativa secondo le tue possibilità</div>
       </div>
     </div>
   </section>
@@ -819,24 +611,13 @@
     <h2 data-i18n="about.title">Chi Sono</h2>
     <div class="about-content">
       <p data-i18n="about.text1">
-        Il mio percorso nel wellness è nato da una crisi profonda: perdita di orientamento, 
-        di certezze, di salute. Il mio sistema nervoso ne ha riportato danni permanenti. 
-        Da quell'esperienza ho scelto di dedicarmi alla cura – di me stesso prima, degli altri poi.
+        Sono Simone, massaggiatore certificato in massaggio svedese e praticante I Ching. Ho completato la formazione in massaggio e ora sto costruendo esperienza pratica con clienti reali.
       </p>
       <p data-i18n="about.text2">
-        Sono certificato in massaggio svedese e pratico l'I Ching da anni, sviluppando 
-        un metodo personale di lettura. Questi strumenti mi hanno aiutato nel mio percorso 
-        di ricostruzione e ora li offro a chi attraversa momenti di transizione o cerca equilibrio.
+        L'I Ching è una pratica spirituale che porto avanti da anni e che condivido con chi cerca riflessione e guida attraverso l'antica saggezza del Libro dei Mutamenti.
       </p>
-      
-      <div class="philosophy-quote" data-i18n="about.quote">
-        "Il tempo in cui ci si sofferma ad entrare in connessione con se stessi ed i propri pattern è l'unico che valga la pena vivere."
-      </div>
-      
       <p data-i18n="about.text3">
-        Ogni persona è unica, ogni percorso è diverso. Il mio ruolo è facilitare 
-        il tuo viaggio verso l'equilibrio, offrendoti strumenti e supporto 
-        adattati al tuo momento di vita.
+        Entrambi i servizi sono offerti separatamente: il massaggio come servizio professionale a tariffa fissa, l'I Ching come pratica spirituale a offerta libera.
       </p>
     </div>
   </section>
@@ -844,80 +625,31 @@
   <!-- Contact Section -->
   <section id="contact">
     <h2 data-i18n="contact.title">Contatti & Prenotazioni</h2>
-    <div class="contact-content">
-      <div class="contact-info">
-        <p><strong>Email:</strong> bileragger@gmail.com</p>
-        <p><strong data-i18n="contact.studio">Studio:</strong> <span data-i18n="contact.city">Napoli, Italia</span></p>
-        <p data-i18n="contact.availability">Sessioni in presenza e online</p>
-      </div>
-      
-      <!-- Pricing -->
-      <div class="pricing-box">
-        <h3 data-i18n="pricing.title">Tariffe</h3>
-        <div class="pricing-item">
-          <span class="pricing-name" data-i18n="pricing.massage60">Massaggio Svedese 60 min</span>
-          <span class="pricing-amount">€50</span>
-        </div>
-        <div class="pricing-item">
-          <span class="pricing-name" data-i18n="pricing.massage90">Massaggio Svedese 90 min</span>
-          <span class="pricing-amount">€70</span>
-        </div>
-        <div class="pricing-item">
-          <span class="pricing-name" data-i18n="pricing.iching">Lettura I Ching Classica</span>
-          <span class="pricing-amount" data-i18n="pricing.freewill">Offerta libera</span>
-        </div>
-        <div class="pricing-item">
-          <span class="pricing-name" data-i18n="pricing.ichingremote">I Ching Remoto Online</span>
-          <span class="pricing-amount" data-i18n="pricing.freewill">Offerta libera</span>
+    <div class="contact-info">
+      <p data-i18n="contact.intro">Per prenotare una sessione di massaggio o richiedere una lettura I Ching, contattami via email o WhatsApp.</p>
+      <div class="contact-details">
+        <div class="contact-item">
+          <strong data-i18n="contact.location">Luogo:</strong>
+          <span data-i18n="contact.city">Napoli, Italia</span>
         </div>
       </div>
-      
-      <!-- Donation Box -->
-      <div class="donation-box">
-        <h3 data-i18n="donation.title">Hai ricevuto una lettura I Ching?</h3>
-        <p data-i18n="donation.text">
-          Per le letture I Ching pratico la donazione libera. Se hai già beneficiato di una consultazione, 
-          puoi contribuire secondo le tue possibilità e il valore che senti di aver ricevuto. 
-          Non c'è una cifra giusta o sbagliata – l'importante è che lo scambio sia sentito come autentico.
-        </p>
-        <a href="https://paypal.me/bileragger" class="btn-donation" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.419c.041-.27.269-.466.542-.466h7.013c2.312 0 4.061.56 5.201 1.664 1.047 1.017 1.583 2.499 1.498 4.135-.018.354-.054.693-.104 1.018-.052.333-.127.649-.218.951a6.83 6.83 0 0 1-.378.942c-.164.318-.356.619-.576.903a6.86 6.86 0 0 1-.759.801 5.835 5.835 0 0 1-.969.681c-.367.206-.765.378-1.192.512-.431.136-.908.204-1.425.204H10.89c-.306 0-.592.17-.732.444l-.039.07-.575 3.642-.024.115c-.021.123-.087.234-.186.314a.554.554 0 0 1-.325.102m7.276-15.26h-3.819l.002.013c-.256 1.637-1.56 2.208-3.099 2.208H6.024L4.19 20.133h2.235l.449-2.84c.034-.216.214-.376.433-.376h.998c1.824 0 3.25-.743 3.668-2.892.013-.065.024-.129.034-.194a2.08 2.08 0 0 0-.31-1.427 2.7 2.7 0 0 0-2.184-1.078"/>
-          </svg>
-          <span data-i18n="donation.cta">Effettua una Donazione</span>
-        </a>
-      </div>
-      
-      <div class="social-links">
-        <a href="https://www.instagram.com/bileragger/" target="_blank" rel="noopener" title="Instagram">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="2" width="20" height="20" rx="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="18" cy="6" r="1" fill="currentColor"/>
-          </svg>
-        </a>
-        <a href="https://wa.me/qr/WXMBTGFLWJOWN1" target="_blank" rel="noopener" title="WhatsApp">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-          </svg>
-        </a>
-      </div>
-      
-      <div style="margin-top: 3rem;">
-        <a href="mailto:bileragger@gmail.com" class="btn" data-i18n="contact.cta">Contattami per Prenotare</a>
-      </div>
+      <a href="mailto:bileragger@gmail.com?subject=Prenotazione" class="btn" data-i18n="contact.cta_email">Invia Email</a>
+      <a href="https://wa.me/393276605739?text=Ciao,%20vorrei%20informazioni%20sui%20tuoi%20servizi" class="btn-whatsapp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span data-i18n="contact.cta_whatsapp">Scrivimi su WhatsApp</span>
+      </a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="footer-links">
-      <a href="https://exposedproject.com" data-i18n="footer.home">Home</a>
-      <a href="https://exposedproject.com/tech/" data-i18n="footer.tech">Technology</a>
-    </div>
-    <p style="color: var(--gray-medium); font-size: 0.85rem;">
-      © 2024 Simone Esposito / Exposed Project
-    </p>
+    <ul class="footer-links">
+      <li><a href="https://exposedproject.com" data-i18n="footer.home">Home</a></li>
+      <li><a href="https://exposedproject.com/tech" data-i18n="footer.tech">Technology</a></li>
+    </ul>
+    <p class="copyright">© 2024 Simone Esposito - Exposed Project</p>
   </footer>
 
   <script>
@@ -927,85 +659,59 @@
         nav: {
           home: "Home",
           services: "Servizi",
-          sessions: "Sessioni",
+          pricing: "Tariffe",
           about: "Chi Sono",
           contact: "Contatti"
         },
         hero: {
-          title: "Wellness & Consapevolezza",
-          subtitle: "Accompagno persone nel loro percorso di equilibrio attraverso pratiche millenarie e trattamenti professionali.",
+          title: "Wellness & Awareness",
+          subtitle: "Massaggio svedese e letture I Ching a Napoli.",
           cta: "Prenota Sessione"
         },
         services: {
-          title: "Servizi & Pratiche",
+          title: "Servizi",
           iching: {
             title: "I Ching",
-            desc: "Letture personalizzate del Libro dei Mutamenti per navigare decisioni e transizioni. Pratica personale sviluppata in anni di studio.",
-            f1: "Consultazioni individuali",
+            desc: "Letture personalizzate del Libro dei Mutamenti per riflessione, insight e guida decisionale. Pratica spirituale personale sviluppata negli anni.",
+            f1: "Letture individuali",
             f2: "Interpretazione esagrammi",
-            f3: "Guida nei momenti di transizione",
-            f4: "Sessioni online disponibili",
-            note: "Donazione libera"
+            f3: "Sessioni in presenza o online",
+            f4: "Richiesta via email",
+            note: "Offerta libera"
           },
           massage: {
             title: "Massaggio Svedese",
-            desc: "Trattamenti professionali certificati per il rilassamento profondo e il riequilibrio del corpo.",
-            f1: "Sessioni 60/90 minuti",
+            desc: "Massaggiatore certificato, attualmente in fase di costruzione esperienza pratica post-formazione. Sessioni di rilassamento e benessere corporeo da 60 o 90 minuti.",
+            f1: "Sessioni da 60 o 90 minuti",
             f2: "Tecniche classiche svedesi",
-            f3: "Oli essenziali naturali",
-            f4: "Ambiente rilassante",
-            note: "Operatore certificato"
+            f3: "Studio privato a Napoli",
+            f4: "Su appuntamento",
+            note: "Tariffa introduttiva per nuovi clienti"
           }
-        },
-        approach: {
-          listen: {
-            title: "Ascolto",
-            desc: "Ogni percorso inizia con l'ascolto profondo delle tue esigenze"
-          },
-          personalize: {
-            title: "Personalizzazione",
-            desc: "Adatto le pratiche al tuo momento specifico di vita"
-          },
-          integrate: {
-            title: "Integrazione",
-            desc: "Ti supporto nell'integrare le pratiche nel quotidiano"
-          }
-        },
-        sessions: {
-          title: "Tipologie di Sessioni",
-          s1: { type: "I CHING", title: "Lettura Classica", duration: "60 minuti" },
-          s2: { type: "I CHING", title: "Percorso Guidato", duration: "3 sessioni" },
-          s3: { type: "MASSAGGIO", title: "Rilassamento Base", duration: "60 minuti" },
-          s4: { type: "MASSAGGIO", title: "Trattamento Completo", duration: "90 minuti" },
-          s5: { type: "INTEGRATO", title: "Consulto + Massaggio", duration: "120 minuti" },
-          s6: { type: "ONLINE", title: "I Ching Remoto", duration: "45 minuti" }
-        },
-        about: {
-          title: "Chi Sono",
-          text1: "Il mio percorso nel wellness è nato da una crisi profonda: perdita di orientamento, di certezze, di salute. Il mio sistema nervoso ne ha riportato danni permanenti. Da quell'esperienza ho scelto di dedicarmi alla cura – di me stesso prima, degli altri poi.",
-          text2: "Sono certificato in massaggio svedese e pratico l'I Ching da anni, sviluppando un metodo personale di lettura. Questi strumenti mi hanno aiutato nel mio percorso di ricostruzione e ora li offro a chi attraversa momenti di transizione o cerca equilibrio.",
-          quote: "\"Il tempo in cui ci si sofferma ad entrare in connessione con se stessi ed i propri pattern è l'unico che valga la pena vivere.\"",
-          text3: "Ogni persona è unica, ogni percorso è diverso. Il mio ruolo è facilitare il tuo viaggio verso l'equilibrio, offrendoti strumenti e supporto adattati al tuo momento di vita."
-        },
-        contact: {
-          title: "Contatti & Prenotazioni",
-          studio: "Studio:",
-          city: "Napoli, Italia",
-          availability: "Sessioni in presenza e online",
-          cta: "Contattami per Prenotare"
         },
         pricing: {
           title: "Tariffe",
-          massage60: "Massaggio Svedese 60 min",
-          massage90: "Massaggio Svedese 90 min",
-          iching: "Lettura I Ching Classica",
-          ichingremote: "I Ching Remoto Online",
+          massage: "Massaggio Svedese",
+          massage_complete: "(sessione completa)",
+          massage_note: "Tariffa introduttiva per nuovi clienti",
+          iching: "Lettura I Ching",
+          iching_duration: "Pratica spirituale",
+          iching_note: "Donazione facoltativa secondo le tue possibilità",
           freewill: "Offerta libera"
         },
-        donation: {
-          title: "Hai ricevuto una lettura I Ching?",
-          text: "Per le letture I Ching pratico la donazione libera. Se hai già beneficiato di una consultazione, puoi contribuire secondo le tue possibilità e il valore che senti di aver ricevuto. Non c'è una cifra giusta o sbagliata – l'importante è che lo scambio sia sentito come autentico.",
-          cta: "Effettua una Donazione"
+        about: {
+          title: "Chi Sono",
+          text1: "Sono Simone, massaggiatore certificato in massaggio svedese e praticante I Ching. Ho completato la formazione in massaggio e ora sto costruendo esperienza pratica con clienti reali.",
+          text2: "L'I Ching è una pratica spirituale che porto avanti da anni e che condivido con chi cerca riflessione e guida attraverso l'antica saggezza del Libro dei Mutamenti.",
+          text3: "Entrambi i servizi sono offerti separatamente: il massaggio come servizio professionale a tariffa fissa, l'I Ching come pratica spirituale a offerta libera."
+        },
+        contact: {
+          title: "Contatti & Prenotazioni",
+          intro: "Per prenotare una sessione di massaggio o richiedere una lettura I Ching, contattami via email o WhatsApp.",
+          location: "Luogo:",
+          city: "Napoli, Italia",
+          cta_email: "Invia Email",
+          cta_whatsapp: "Scrivimi su WhatsApp"
         },
         footer: {
           home: "Home",
@@ -1016,85 +722,59 @@
         nav: {
           home: "Home",
           services: "Services",
-          sessions: "Sessions",
+          pricing: "Rates",
           about: "About",
           contact: "Contact"
         },
         hero: {
           title: "Wellness & Awareness",
-          subtitle: "I guide people on their journey to balance through ancient practices and professional treatments.",
+          subtitle: "Swedish massage and I Ching readings in Naples.",
           cta: "Book Session"
         },
         services: {
-          title: "Services & Practices",
+          title: "Services",
           iching: {
             title: "I Ching",
-            desc: "Personalized readings of the Book of Changes to navigate decisions and transitions. Personal practice developed through years of study.",
-            f1: "Individual consultations",
+            desc: "Personalized readings of the Book of Changes for reflection, insight, and decision guidance. Personal spiritual practice developed over the years.",
+            f1: "Individual readings",
             f2: "Hexagram interpretation",
-            f3: "Guidance through transitions",
-            f4: "Online sessions available",
-            note: "Free-will donation"
+            f3: "In-person or online sessions",
+            f4: "Request via email",
+            note: "Free-will offering"
           },
           massage: {
             title: "Swedish Massage",
-            desc: "Certified professional treatments for deep relaxation and body rebalancing.",
-            f1: "60/90 minute sessions",
+            desc: "Certified massage therapist, currently building practical experience post-training. Sessions focused on relaxation and physical well-being, 60 or 90 minutes.",
+            f1: "60 or 90-minute sessions",
             f2: "Classic Swedish techniques",
-            f3: "Natural essential oils",
-            f4: "Relaxing environment",
-            note: "Certified practitioner"
+            f3: "Private studio in Naples",
+            f4: "By appointment",
+            note: "Introductory rate for new clients"
           }
-        },
-        approach: {
-          listen: {
-            title: "Listening",
-            desc: "Every journey begins with deep listening to your needs"
-          },
-          personalize: {
-            title: "Personalization",
-            desc: "I adapt practices to your specific life moment"
-          },
-          integrate: {
-            title: "Integration",
-            desc: "I support you in integrating practices into daily life"
-          }
-        },
-        sessions: {
-          title: "Session Types",
-          s1: { type: "I CHING", title: "Classic Reading", duration: "60 minutes" },
-          s2: { type: "I CHING", title: "Guided Journey", duration: "3 sessions" },
-          s3: { type: "MASSAGE", title: "Basic Relaxation", duration: "60 minutes" },
-          s4: { type: "MASSAGE", title: "Complete Treatment", duration: "90 minutes" },
-          s5: { type: "INTEGRATED", title: "Consultation + Massage", duration: "120 minutes" },
-          s6: { type: "ONLINE", title: "Remote I Ching", duration: "45 minutes" }
-        },
-        about: {
-          title: "About",
-          text1: "My wellness journey began with a profound crisis: loss of direction, certainties, and health. My nervous system sustained permanent damage. From that experience, I chose to dedicate myself to care – of myself first, then of others.",
-          text2: "I'm certified in Swedish massage and have practiced I Ching for years, developing a personal reading method. These tools helped me in my reconstruction journey, and now I offer them to those going through transitions or seeking balance.",
-          quote: "\"The time we take to connect with ourselves and our own patterns is the only time truly worth living.\"",
-          text3: "Each person is unique, each path is different. My role is to facilitate your journey toward balance, offering you tools and support adapted to your life moment."
-        },
-        contact: {
-          title: "Contact & Bookings",
-          studio: "Studio:",
-          city: "Naples, Italy",
-          availability: "In-person and online sessions",
-          cta: "Contact to Book"
         },
         pricing: {
           title: "Rates",
-          massage60: "Swedish Massage 60 min",
-          massage90: "Swedish Massage 90 min",
-          iching: "Classic I Ching Reading",
-          ichingremote: "Remote I Ching Online",
+          massage: "Swedish Massage",
+          massage_complete: "(complete session)",
+          massage_note: "Introductory rate for new clients",
+          iching: "I Ching Reading",
+          iching_duration: "Spiritual practice",
+          iching_note: "Optional donation according to your means",
           freewill: "Free-will offering"
         },
-        donation: {
-          title: "Have you received an I Ching reading?",
-          text: "For I Ching readings, I practice free-will donation. If you've already benefited from a consultation, you can contribute according to your means and the value you feel you received. There's no right or wrong amount – what matters is that the exchange feels authentic to you.",
-          cta: "Make a Donation"
+        about: {
+          title: "About",
+          text1: "I'm Simone, a certified Swedish massage therapist and I Ching practitioner. I've completed my massage training and am now building practical experience with real clients.",
+          text2: "I Ching is a spiritual practice I've maintained for years and share with those seeking reflection and guidance through the ancient wisdom of the Book of Changes.",
+          text3: "Both services are offered separately: massage as a professional service at a fixed rate, I Ching as a spiritual practice on a free-will basis."
+        },
+        contact: {
+          title: "Contact & Bookings",
+          intro: "To book a massage session or request an I Ching reading, contact me via email or WhatsApp.",
+          location: "Location:",
+          city: "Naples, Italy",
+          cta_email: "Send Email",
+          cta_whatsapp: "Message on WhatsApp"
         },
         footer: {
           home: "Home",
