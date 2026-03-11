@@ -349,6 +349,25 @@
       font-size: 0.9rem;
       line-height: 1.7;
     }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .project-link {
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .project-link:hover {
+      border-bottom-color: var(--accent);
+    }
     
     .about-content {
       max-width: 700px;
@@ -636,81 +655,7 @@
         <button class="tab-btn" data-tab="creative" data-i18n="portfolio.tab.creative">Artistico</button>
       </div>
       
-      <div class="portfolio-grid">
-        <!-- Enterprise Projects -->
-        <div class="project-card active" data-category="enterprise">
-          <div class="project-year">2024-2025</div>
-          <h3 class="project-title" data-i18n="portfolio.p1.title">NER per Testi Italiani Antichi</h3>
-          <p class="project-description" data-i18n="portfolio.p1.desc">
-            Modello specializzato per Named Entity Recognition su testi in Volgare. 
-            Tesi di Master in AI presso Università di Bologna. Integrazione in motore di ricerca RAG.
-          </p>
-        </div>
-        
-        <div class="project-card active" data-category="enterprise">
-          <div class="project-year">2023-2024</div>
-          <h3 class="project-title" data-i18n="portfolio.p2.title">Predictive Maintenance Industriale</h3>
-          <p class="project-description" data-i18n="portfolio.p2.desc">
-            Sistema di predizione guasti per macchine CNC basato su analisi di valori di tensione 
-            e vibrazione. Machine learning per manutenzione preventiva.
-          </p>
-        </div>
-        
-        <div class="project-card active" data-category="enterprise">
-          <div class="project-year">2024</div>
-          <h3 class="project-title" data-i18n="portfolio.p3.title">Call-Center Analyser</h3>
-          <p class="project-description" data-i18n="portfolio.p3.desc">
-            Analisi automatica di conversazioni telefoniche tramite LLM (Llama 3) e Pydantic 
-            per estrazione di informazioni chiave e sentiment analysis.
-          </p>
-        </div>
-        
-        <div class="project-card active" data-category="enterprise">
-          <div class="project-year">2023</div>
-          <h3 class="project-title" data-i18n="portfolio.p4.title">Safety Monitoring CV System</h3>
-          <p class="project-description" data-i18n="portfolio.p4.desc">
-            Computer vision per cantieri edili. Verifica automatica di DPI (dispositivi di protezione 
-            individuale) tramite object detection in tempo reale.
-          </p>
-        </div>
-        
-        <!-- Creative Projects -->
-        <div class="project-card active" data-category="creative">
-          <div class="project-year">2018-2025</div>
-          <h3 class="project-title" data-i18n="portfolio.p5.title">Damp Collective</h3>
-          <p class="project-description" data-i18n="portfolio.p5.desc">
-            Consulenza tecnica continuativa per installazioni artistiche. Sviluppo di soluzioni 
-            custom per sensori, interazione e sistemi audiovisivi.
-          </p>
-        </div>
-        
-        <div class="project-card active" data-category="creative">
-          <div class="project-year">2024</div>
-          <h3 class="project-title" data-i18n="portfolio.p6.title">Quotidiano per il Quotidiano</h3>
-          <p class="project-description" data-i18n="portfolio.p6.desc">
-            Con Clarissa Baldassarri e Spazio Instabile. Installazione con AI per real-time 
-            captioning di video stream su spazio pubblico.
-          </p>
-        </div>
-        
-        <div class="project-card active" data-category="creative">
-          <div class="project-year">2017-2025</div>
-          <h3 class="project-title" data-i18n="portfolio.p7.title">Residenze Lac o le mon</h3>
-          <p class="project-description" data-i18n="portfolio.p7.desc">
-            Workshop artistici con Cesare Pietroiusti, Roberto dell'Orco, Iacopo Seri. 
-            Laboratori dell'Indicibile e Dionisiaco presso la fondazione.
-          </p>
-        </div>
-        
-        <div class="project-card active" data-category="creative">
-          <div class="project-year">2019-2022</div>
-          <h3 class="project-title" data-i18n="portfolio.p8.title">Progetti Collaborativi</h3>
-          <p class="project-description" data-i18n="portfolio.p8.desc">
-            ASTERIO (2020), I'm not a robot - Premio MUVE (2019), Hippos - Nork Magazine (2022). 
-            Progetti multidisciplinari con Luisa de Donato e Valerio Mattiacci.
-          </p>
-        </div>
-      </div>
+      <div class="portfolio-grid" id="portfolio-grid"></div>
     </section>
   </div>
 
@@ -774,7 +719,7 @@
   <footer>
     <div class="footer-links">
       <a href="https://exposedproject.com" data-i18n="footer.home">Home</a>
-      <a href="https://wellness.exposedproject.com" data-i18n="footer.wellness">Wellness</a>
+      <a href="https://exposedproject.com/wellness" data-i18n="footer.wellness">Wellness</a>
     </div>
     <p style="color: var(--gray-medium); font-size: 0.85rem;">
       © 2024 Simone Esposito / Exposed Project
@@ -806,14 +751,6 @@
         portfolio: {
           title: "Portfolio",
           tab: { all: "Tutti", enterprise: "Enterprise", creative: "Artistico" },
-          p1: { title: "NER per Testi Italiani Antichi", desc: "Modello specializzato per Named Entity Recognition su testi in Volgare. Tesi di Master in AI presso Università di Bologna. Integrazione in motore di ricerca RAG." },
-          p2: { title: "Predictive Maintenance Industriale", desc: "Sistema di predizione guasti per macchine CNC basato su analisi di valori di tensione e vibrazione. Machine learning per manutenzione preventiva." },
-          p3: { title: "Call-Center Analyser", desc: "Analisi automatica di conversazioni telefoniche tramite LLM (Llama 3) e Pydantic per estrazione di informazioni chiave e sentiment analysis." },
-          p4: { title: "Safety Monitoring CV System", desc: "Computer vision per cantieri edili. Verifica automatica di DPI (dispositivi di protezione individuale) tramite object detection in tempo reale." },
-          p5: { title: "Damp Collective", desc: "Consulenza tecnica continuativa per installazioni artistiche. Sviluppo di soluzioni custom per sensori, interazione e sistemi audiovisivi." },
-          p6: { title: "Quotidiano per il Quotidiano", desc: "Con Clarissa Baldassarri e Spazio Instabile. Installazione con AI per real-time captioning di video stream su spazio pubblico." },
-          p7: { title: "Residenze Lac o le mon", desc: "Workshop artistici con Cesare Pietroiusti, Roberto dell'Orco, Iacopo Seri. Laboratori dell'Indicibile e Dionisiaco presso la fondazione." },
-          p8: { title: "Progetti Collaborativi", desc: "ASTERIO (2020), I'm not a robot - Premio MUVE (2019), Hippos - Nork Magazine (2022). Progetti multidisciplinari con Luisa de Donato e Valerio Mattiacci." }
         },
         about: {
           title: "Chi Sono",
@@ -848,14 +785,6 @@
         portfolio: {
           title: "Portfolio",
           tab: { all: "All", enterprise: "Enterprise", creative: "Creative" },
-          p1: { title: "NER for Old Italian Texts", desc: "Specialized Named Entity Recognition model for Volgare texts. Master's thesis in AI at University of Bologna. Integration in RAG search engine." },
-          p2: { title: "Industrial Predictive Maintenance", desc: "Fault prediction system for CNC machines based on voltage and vibration analysis. Machine learning for preventive maintenance." },
-          p3: { title: "Call-Center Analyser", desc: "Automatic analysis of phone conversations via LLM (Llama 3) and Pydantic for key information extraction and sentiment analysis." },
-          p4: { title: "Safety Monitoring CV System", desc: "Computer vision for construction sites. Automatic verification of PPE (personal protective equipment) via real-time object detection." },
-          p5: { title: "Damp Collective", desc: "Ongoing technical consulting for art installations. Development of custom solutions for sensors, interaction and audiovisual systems." },
-          p6: { title: "Quotidiano per il Quotidiano", desc: "With Clarissa Baldassarri and Spazio Instabile. AI installation for real-time video stream captioning in public space." },
-          p7: { title: "Lac o le mon Residencies", desc: "Art workshops with Cesare Pietroiusti, Roberto dell'Orco, Iacopo Seri. Laboratorio dell'Indicibile and Dionisiaco at the foundation." },
-          p8: { title: "Collaborative Projects", desc: "ASTERIO (2020), I'm not a robot - MUVE Award (2019), Hippos - Nork Magazine (2022). Multidisciplinary projects with Luisa de Donato and Valerio Mattiacci." }
         },
         about: {
           title: "About",
@@ -870,6 +799,36 @@
     };
 
     let currentLang = 'it';
+    let projectsData = [];
+
+    function renderProjects(filter) {
+      const grid = document.getElementById('portfolio-grid');
+      const activeFilter = filter || document.querySelector('.tab-btn.active')?.dataset.tab || 'all';
+      grid.innerHTML = '';
+      const sorted = [...projectsData].sort((a, b) => {
+        const latestYear = s => parseInt(s.toString().split('-').pop());
+        return latestYear(b.year) - latestYear(a.year);
+      });
+      sorted.forEach(project => {
+        const card = document.createElement('div');
+        card.className = 'project-card' + (activeFilter === 'all' || project.category === activeFilter ? ' active' : '');
+        card.dataset.category = project.category;
+        card.innerHTML = `
+          <div class="project-year">${project.year}</div>
+          <h3 class="project-title">${project.title[currentLang]}</h3>
+          <p class="project-description">${project.desc[currentLang]}</p>
+          ${(project.links && project.links.length) ? `<div class="project-links">${project.links.map(l => `<a class="project-link" href="${l.url}" target="_blank" rel="noopener">↗ ${l.label ? l.label[currentLang] : (currentLang === 'it' ? 'Scopri di più' : 'Learn more')}</a>`).join('')}</div>` : ''}
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    fetch('projects.json')
+      .then(r => r.json())
+      .then(data => {
+        projectsData = data;
+        renderProjects('all');
+      });
 
     const langOptions = document.querySelectorAll('.lang-option');
     const langIndicator = document.querySelector('.lang-indicator');
@@ -901,6 +860,7 @@
           element.textContent = translation;
         }
       });
+      if (projectsData.length) renderProjects();
     }
 
     function getNestedProperty(obj, key) {
@@ -909,26 +869,12 @@
 
     // Portfolio tabs
     const tabBtns = document.querySelectorAll('.tab-btn');
-    const projectCards = document.querySelectorAll('.project-card');
 
     tabBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        const filter = btn.dataset.tab;
-        
         tabBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        
-        projectCards.forEach(card => {
-          if (filter === 'all') {
-            card.classList.add('active');
-          } else {
-            if (card.dataset.category === filter) {
-              card.classList.add('active');
-            } else {
-              card.classList.remove('active');
-            }
-          }
-        });
+        renderProjects(btn.dataset.tab);
       });
     });
 

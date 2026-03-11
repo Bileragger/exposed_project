@@ -1,0 +1,154 @@
+[
+  {
+    "id": "p1",
+    "year": "2024-2025",
+    "category": "enterprise",
+    "title": {
+      "it": "NER per Testi Italiani Antichi",
+      "en": "NER for Old Italian Texts"
+    },
+    "desc": {
+      "it": "Modello specializzato per Named Entity Recognition su testi in Volgare. Tesi di Master in AI presso Università di Bologna. Integrazione in motore di ricerca RAG.",
+      "en": "Specialized Named Entity Recognition model for Volgare texts. Master's thesis in AI at University of Bologna. Integration in RAG search engine."
+    }
+  },
+  {
+    "id": "p2",
+    "year": "2023-2024",
+    "category": "enterprise",
+    "title": {
+      "it": "Predictive Maintenance Industriale",
+      "en": "Industrial Predictive Maintenance"
+    },
+    "desc": {
+      "it": "Sistema di predizione guasti per macchine CNC basato su analisi di valori di tensione e vibrazione. Machine learning per manutenzione preventiva.",
+      "en": "Fault prediction system for CNC machines based on voltage and vibration analysis. Machine learning for preventive maintenance."
+    }
+  },
+  {
+    "id": "p3",
+    "year": "2024",
+    "category": "enterprise",
+    "title": {
+      "it": "Call-Center Analyser",
+      "en": "Call-Center Analyser"
+    },
+    "desc": {
+      "it": "Analisi automatica di conversazioni telefoniche tramite LLM (Llama 3) e Pydantic per estrazione di informazioni chiave e sentiment analysis.",
+      "en": "Automatic analysis of phone conversations via LLM (Llama 3) and Pydantic for key information extraction and sentiment analysis."
+    }
+  },
+  {
+    "id": "p4",
+    "year": "2023",
+    "category": "enterprise",
+    "title": {
+      "it": "Safety Monitoring CV System",
+      "en": "Safety Monitoring CV System"
+    },
+    "desc": {
+      "it": "Computer vision per cantieri edili. Verifica automatica di DPI (dispositivi di protezione individuale) tramite object detection in tempo reale.",
+      "en": "Computer vision for construction sites. Automatic verification of PPE (personal protective equipment) via real-time object detection."
+    }
+  },
+  {
+    "id": "p5",
+    "year": "2018-2024",
+    "category": "creative",
+    "title": {
+      "it": "Damp Collective",
+      "en": "Damp Collective"
+    },
+    "desc": {
+      "it": "Consulenza tecnica continuativa per installazioni artistiche. Sviluppo di soluzioni custom per sensori, interazione e sistemi audiovisivi.",
+      "en": "Ongoing technical consulting for art installations. Development of custom solutions for sensors, interaction and audiovisual systems."
+    },
+    "links": [
+      { "url": "https://www.collettivodamp.com/", "label": { "it": "Sito del collettivo", "en": "Collective website" } }
+    ]
+  },
+  {
+    "id": "p6",
+    "year": "2024",
+    "category": "creative",
+    "title": {
+      "it": "Quotidiano per il Quotidiano",
+      "en": "Quotidiano per il Quotidiano"
+    },
+    "desc": {
+      "it": "Con Clarissa Baldassarri e Spazio Instabile. Installazione con AI per real-time captioning di video stream su spazio pubblico.",
+      "en": "With Clarissa Baldassarri and Spazio Instabile. AI installation for real-time video stream captioning in public space."
+    },
+    "links": [
+      { "url": "https://gmcg.it/clarissa-baldassarri/", "label": { "it": "Clarissa Baldassarri", "en": "Clarissa Baldassarri" } }
+    ]
+  },
+  {
+    "id": "p10",
+    "year": "2026",
+    "category": "creative",
+    "title": {
+      "it": "Tromp-l’oeil",
+      "en": "Tromp-l’oeil"
+    },
+    "desc": {
+      "it": "Con Clarissa Baldassarri e presso Museo MADRE. Installazione con AI per real-time captioning di video stream.",
+      "en": "With Clarissa Baldassarri at the MADRE Museum. Installation with AI for real-time captioning of video streams."
+    },
+    "links": [
+      { "url": "https://gmcg.it/clarissa-baldassarri/", "label": { "it": "Clarissa Baldassarri", "en": "Clarissa Baldassarri" } },
+      { "url": "https://www.madrenapoli.it/", "label": { "it": "Museo MADRE", "en": "MADRE Museum" } }
+    ]
+  },
+  {
+    "id": "p7",
+    "year": "2017-2025",
+    "category": "creative",
+    "title": {
+      "it": "Residenze Lac o le mon",
+      "en": "Lac o le mon Residencies"
+    },
+    "desc": {
+      "it": "Workshop artistici con Cesare Pietroiusti, Roberto dell'Orco, Iacopo Seri. Laboratori dell'Indicibile e Dionisiaco presso la fondazione.",
+      "en": "Art workshops with Cesare Pietroiusti, Roberto dell'Orco, Iacopo Seri. Laboratorio dell'Indicibile and Dionisiaco at the foundation."
+    },
+    "links": [
+      { "url": "https://lacolemon.org/", "label": { "it": "Sito della fondazione", "en": "Foundation website" } }
+    ]
+  },
+  {
+    "id": "p8",
+    "year": "2019-2022",
+    "category": "creative",
+    "title": {
+      "it": "Progetti Collaborativi",
+      "en": "Collaborative Projects"
+    },
+    "desc": {
+      "it": "ASTERIO (2020), I'm not a robot - Premio MUVE (2019), Hippos - Nork Magazine (2022). Progetti multidisciplinari con Luisa de Donato e Valerio Mattiacci.",
+      "en": "ASTERIO (2020), I'm not a robot - MUVE Award (2019), Hippos - Nork Magazine (2022). Multidisciplinary projects with Luisa de Donato and Valerio Mattiacci."
+    },
+    "links": [
+      { "url": "https://sites.google.com/view/asterio/info?authuser=0", "label": { "it": "Progetto ASTERIO", "en": "ASTERIO Project" } },
+      { "url": "https://www.instagram.com/norkmagazine/", "label": { "it": "NORK Magazine", "en": "NORK Magazine" } },
+      { "url": "https://muvemestre.visitmuve.it/it/mostre/archivio-mostre/artefici-del-nostro-tempo/2019/12/20824/esposizione-delle-opere/", "label": { "it": "Artefici del Nostro Tempo 2020", "en": "Artefici del Nostro Tempo 2020" } }
+    ]
+  },
+  {
+    "id": "p9",
+    "year": "2018",
+    "category": "creative",
+    "title": {
+      "it": "Residenza Amacà",
+      "en": "Amacà Residency"
+    },
+    "desc": {
+      "it": "Residenza artistica organizzata da Giusto il Tempo di un Tè presso Ex-Lanificio (Napoli)",
+      "en": "Artistic residency organised by Giusto il Tempo di un Tè at Ex-Lanificio (Naples)"
+    },
+    "links": [
+      { "url": "http://www.lanhub.org/amaca/", "label": { "it": "Amacà", "en": "Amacà" } }
+    ]
+  }
+]
+
