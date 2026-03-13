@@ -1,0 +1,34 @@
+{
+  "phone": "+39 327 660 5739",
+  "tech": {
+    "email": "sesposito1101@gmail.com",
+    "social": [
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/simone-esposito-22476170/",
+        "icon": "linkedin"
+      },
+      {
+        "name": "GitHub",
+        "url": "#",
+        "icon": "github"
+      }
+    ],
+    "footer_links": [
+      { "url": "https://exposedproject.com", "label": { "it": "Home", "en": "Home" } },
+      { "url": "https://exposedproject.com/wellness", "label": { "it": "Wellness", "en": "Wellness" } }
+    ]
+  },
+  "wellness": {
+    "email": "bileragger@gmail.com",
+    "whatsapp": {
+      "url": "https://wa.me/393276605739?text=Ciao,%20vorrei%20informazioni%20sui%20tuoi%20servizi",
+      "label": { "it": "Scrivimi su WhatsApp", "en": "Message on WhatsApp" }
+    },
+    "paypal": "https://paypal.me/bileragger",
+    "footer_links": [
+      { "url": "https://exposedproject.com", "label": { "it": "Home", "en": "Home" } },
+      { "url": "https://exposedproject.com/tech", "label": { "it": "Technology", "en": "Technology" } }
+    ]
+  }
+}
