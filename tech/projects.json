@@ -1,4 +1,55 @@
 [
+
+  {
+    "id": "p13",
+    "year": "2020",
+    "category": "creative",
+    "desc": {
+      "it": "Collaborazione con il magazine Metastasi di Alessandro Armento e Viviana Marchiò",
+      "en": "Collaboration with the magazine Metastasi by Alessandro Armento and Viviana Marchiò"
+    },
+    "title": {
+      "it": "Metastasi",
+      "en": "Metastasi"
+    },
+    "links": [
+      { "url": "https://www.exibart.com/libri-ed-editoria/metastasi-unopera-in-forma-di-rivista-il-numero-1-in-presentazione-a-napoli/", "label": { "it": "Articolo Exibart", "en": "Exibart Article" } }
+    ]
+  },
+
+  {
+    "id": "p14",
+    "year": "2026",
+    "category": "creative",
+    "desc": {
+      "it": "Collaborazione con dottorandi e ricercatori per l'accademia di belle arti di Napoli e Venezia",
+      "en": "Collaboration with doctoral students and researchers at the Academy of Fine Arts of Naples and Venice"
+    },
+    "title": {
+      "it": "Collaborazioni attive",
+      "en": "Active Collaborations"
+    }
+  },
+
+  {
+    "id": "p12",
+    "year": "2026",
+    "category": "creative",
+    "title": {
+      "it": "I selvaggi asciutti",
+      "en": "I selvaggi asciutti"
+    },
+    "desc": {
+      "it": "Installazione site-specific creata per il progetto CoolCity presso lo spazio Nana, Napoli",
+      "en": "Site-specific installation created for the CoolCity project at the Nana space, Naples"
+    },
+    "links": [
+      { "url": "https://www.exibart.com/progetti-e-iniziative/da-nana-un-ex-ristorante-di-napoli-diventa-spazio-darte-per-una-sola-sera/", "label": { "it": "Articolo Exibart", "en": "Exibart Article" } }
+    ]
+  },
+
+
+
   {
     "id": "p11",
     "year": "2025",
@@ -113,6 +164,7 @@
     },
     "links": [
       { "url": "https://gmcg.it/clarissa-baldassarri/", "label": { "it": "Clarissa Baldassarri", "en": "Clarissa Baldassarri" } },
+      { "url": "https://www.madrenapoli.it/mostre/santa-do-pau-oco/", "label": { "it": "Dettagli mostra", "en": "Exhibition details" } },
       { "url": "https://www.madrenapoli.it/", "label": { "it": "Museo MADRE", "en": "MADRE Museum" } }
     ]
   },

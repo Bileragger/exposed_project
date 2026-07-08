@@ -56,9 +56,14 @@
     }
     
     .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 42px;
+      width: auto;
+      display: block;
     }
     
     .nav-wrapper {
@@ -531,7 +536,7 @@
 <body>
   <header>
     <nav>
-      <div class="logo">SE</div>
+      <div class="logo"><a href="/"><img src="/logo_mini_01.png" alt="Simone Esposito"></a></div>
       <div class="nav-wrapper">
         <ul class="nav-links">
           <li><a href="#home" data-i18n="nav.home">Home</a></li>
