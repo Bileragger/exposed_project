@@ -25,6 +25,9 @@
       "it": "Collaborazione con dottorandi e ricercatori per l'accademia di belle arti di Napoli e Venezia",
       "en": "Collaboration with doctoral students and researchers at the Academy of Fine Arts of Naples and Venice"
     },
+        "links": [
+      { "url": "https://www.linkedin.com/in/luisa-de-donato/", "label": { "it": "Luisa de Donato", "en": "Luisa de Donato" }},
+      { "url": "https://www.linkedin.com/in/mario-francesco-simeone-b111557b/", "label": { "it": "Mario Francesco Simeone", "en": "Mario Francesco Simeone" }}  ],
     "title": {
       "it": "Collaborazioni attive",
       "en": "Active Collaborations"
