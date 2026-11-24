@@ -1,5 +1,29 @@
 [
   {
+    "id": "p16",
+    "year": "2026",
+    "category": "enterprise",
+    "title": {
+      "it": "AroJam",
+      "en": "AroJam"
+    },
+    "desc": {
+      "it": "Una piattaforma web che aspira ad essere il più grande e completo raccoglitore di eventi del napoletano. \nIn arrivo anche altre pagine a corredo, per vivere Napoli con una prospettiva nuova.",
+      "en": "A web platform that aims to be the largest and most comprehensive directory of events in the Naples area.\nMore accompanying pages are also on the way, offering a fresh perspective on Naples."
+    },
+    "links": [
+      {
+        "url": "https://arojam.it/"
+      },
+      {
+        "url": "https://arojam.me/"
+      },
+      {
+        "url": "https://arojam.it/arte/"
+      }
+    ]
+  },
+  {
     "id": "p15",
     "year": "2026",
     "category": "creative",
