@@ -1,39 +1,73 @@
 [
-
+  {
+    "id": "p15",
+    "year": "2026",
+    "category": "creative",
+    "title": {
+      "it": "POST",
+      "en": "POST"
+    },
+    "desc": {
+      "it": "Contributo audio per Paolo Puddu per l'installazione sonora di Liliana Moro curata da Arianna Rosica: dodici tracce sonore (undici realizzate con studenti e dottorandi dell’Accademia di Belle Arti di Napoli e una dell’artista) in mostra al Museo Madre.",
+      "en": "Audio contribution by Paolo Puddu for Liliana Moro’s sound installation, curated by Arianna Rosica: twelve sound tracks (eleven created with students and PhD candidates from the Academy of Fine Arts in Naples, and one by the artist herself) on display at the Madre Museum."
+    },
+    "links": [
+      {
+        "url": "https://www.madrenapoli.it/mostre/post/"
+      }
+    ]
+  },
   {
     "id": "p13",
     "year": "2020",
     "category": "creative",
-    "desc": {
-      "it": "Collaborazione con il magazine Metastasi di Alessandro Armento e Viviana Marchiò",
-      "en": "Collaboration with the magazine Metastasi by Alessandro Armento and Viviana Marchiò"
-    },
     "title": {
       "it": "Metastasi",
       "en": "Metastasi"
     },
+    "desc": {
+      "it": "Collaborazione con il magazine Metastasi di Alessandro Armento e Viviana Marchiò",
+      "en": "Collaboration with the magazine Metastasi by Alessandro Armento and Viviana Marchiò"
+    },
     "links": [
-      { "url": "https://www.exibart.com/libri-ed-editoria/metastasi-unopera-in-forma-di-rivista-il-numero-1-in-presentazione-a-napoli/", "label": { "it": "Articolo Exibart", "en": "Exibart Article" } }
+      {
+        "url": "https://www.exibart.com/libri-ed-editoria/metastasi-unopera-in-forma-di-rivista-il-numero-1-in-presentazione-a-napoli/",
+        "label": {
+          "it": "Articolo Exibart",
+          "en": "Exibart Article"
+        }
+      }
     ]
   },
-
   {
     "id": "p14",
     "year": "2026",
     "category": "creative",
+    "title": {
+      "it": "Collaborazioni attive",
+      "en": "Active Collaborations"
+    },
     "desc": {
       "it": "Collaborazione con dottorandi e ricercatori per l'accademia di belle arti di Napoli e Venezia",
       "en": "Collaboration with doctoral students and researchers at the Academy of Fine Arts of Naples and Venice"
     },
-        "links": [
-      { "url": "https://www.linkedin.com/in/luisa-de-donato/", "label": { "it": "Luisa de Donato", "en": "Luisa de Donato" }},
-      { "url": "https://www.linkedin.com/in/mario-francesco-simeone-b111557b/", "label": { "it": "Mario Francesco Simeone", "en": "Mario Francesco Simeone" }}  ],
-    "title": {
-      "it": "Collaborazioni attive",
-      "en": "Active Collaborations"
-    }
+    "links": [
+      {
+        "url": "https://www.linkedin.com/in/luisa-de-donato/",
+        "label": {
+          "it": "Luisa de Donato",
+          "en": "Luisa de Donato"
+        }
+      },
+      {
+        "url": "https://www.linkedin.com/in/mario-francesco-simeone-b111557b/",
+        "label": {
+          "it": "Mario Francesco Simeone",
+          "en": "Mario Francesco Simeone"
+        }
+      }
+    ]
   },
-
   {
     "id": "p12",
     "year": "2026",
@@ -47,12 +81,15 @@
       "en": "Site-specific installation created for the CoolCity project at the Nana space, Naples"
     },
     "links": [
-      { "url": "https://www.exibart.com/progetti-e-iniziative/da-nana-un-ex-ristorante-di-napoli-diventa-spazio-darte-per-una-sola-sera/", "label": { "it": "Articolo Exibart", "en": "Exibart Article" } }
+      {
+        "url": "https://www.exibart.com/progetti-e-iniziative/da-nana-un-ex-ristorante-di-napoli-diventa-spazio-darte-per-una-sola-sera/",
+        "label": {
+          "it": "Articolo Exibart",
+          "en": "Exibart Article"
+        }
+      }
     ]
   },
-
-
-
   {
     "id": "p11",
     "year": "2025",
@@ -66,7 +103,13 @@
       "en": "Co-founder and CTO. AI infrastructure that enables systems to understand and respond to human emotional regulation during real-world interaction. The Emotional Intelligence Layer for Adaptive AI."
     },
     "links": [
-      { "url": "https://www.sohma.xyz/", "label": { "it": "sohma.xyz", "en": "sohma.xyz" } }
+      {
+        "url": "https://www.sohma.xyz/",
+        "label": {
+          "it": "sohma.xyz",
+          "en": "sohma.xyz"
+        }
+      }
     ]
   },
   {
@@ -134,7 +177,13 @@
       "en": "Ongoing technical consulting for art installations. Development of custom solutions for sensors, interaction and audiovisual systems."
     },
     "links": [
-      { "url": "https://www.collettivodamp.com/", "label": { "it": "Sito del collettivo", "en": "Collective website" } }
+      {
+        "url": "https://www.collettivodamp.com/",
+        "label": {
+          "it": "Sito del collettivo",
+          "en": "Collective website"
+        }
+      }
     ]
   },
   {
@@ -150,7 +199,13 @@
       "en": "With Clarissa Baldassarri and Spazio Instabile. AI installation for real-time video stream captioning in public space."
     },
     "links": [
-      { "url": "https://gmcg.it/clarissa-baldassarri/", "label": { "it": "Clarissa Baldassarri", "en": "Clarissa Baldassarri" } }
+      {
+        "url": "https://gmcg.it/clarissa-baldassarri/",
+        "label": {
+          "it": "Clarissa Baldassarri",
+          "en": "Clarissa Baldassarri"
+        }
+      }
     ]
   },
   {
@@ -166,9 +221,27 @@
       "en": "With Clarissa Baldassarri at the MADRE Museum. Installation with AI for real-time captioning of video streams."
     },
     "links": [
-      { "url": "https://gmcg.it/clarissa-baldassarri/", "label": { "it": "Clarissa Baldassarri", "en": "Clarissa Baldassarri" } },
-      { "url": "https://www.madrenapoli.it/mostre/santa-do-pau-oco/", "label": { "it": "Dettagli mostra", "en": "Exhibition details" } },
-      { "url": "https://www.madrenapoli.it/", "label": { "it": "Museo MADRE", "en": "MADRE Museum" } }
+      {
+        "url": "https://gmcg.it/clarissa-baldassarri/",
+        "label": {
+          "it": "Clarissa Baldassarri",
+          "en": "Clarissa Baldassarri"
+        }
+      },
+      {
+        "url": "https://www.madrenapoli.it/mostre/santa-do-pau-oco/",
+        "label": {
+          "it": "Dettagli mostra",
+          "en": "Exhibition details"
+        }
+      },
+      {
+        "url": "https://www.madrenapoli.it/",
+        "label": {
+          "it": "Museo MADRE",
+          "en": "MADRE Museum"
+        }
+      }
     ]
   },
   {
@@ -184,7 +257,13 @@
       "en": "Art workshops with Cesare Pietroiusti, Roberto dell'Orco, Iacopo Seri. Laboratorio dell'Indicibile and Dionisiaco at the foundation."
     },
     "links": [
-      { "url": "https://lacolemon.org/", "label": { "it": "Sito della fondazione", "en": "Foundation website" } }
+      {
+        "url": "https://lacolemon.org/",
+        "label": {
+          "it": "Sito della fondazione",
+          "en": "Foundation website"
+        }
+      }
     ]
   },
   {
@@ -200,9 +279,27 @@
       "en": "ASTERIO (2020), I'm not a robot - MUVE Award (2019), Hippos - Nork Magazine (2022). Multidisciplinary projects with Luisa de Donato and Valerio Mattiacci."
     },
     "links": [
-      { "url": "https://sites.google.com/view/asterio/info?authuser=0", "label": { "it": "Progetto ASTERIO", "en": "ASTERIO Project" } },
-      { "url": "https://www.instagram.com/norkmagazine/", "label": { "it": "NORK Magazine", "en": "NORK Magazine" } },
-      { "url": "https://muvemestre.visitmuve.it/it/mostre/archivio-mostre/artefici-del-nostro-tempo/2019/12/20824/esposizione-delle-opere/", "label": { "it": "Artefici del Nostro Tempo 2020", "en": "Artefici del Nostro Tempo 2020" } }
+      {
+        "url": "https://sites.google.com/view/asterio/info?authuser=0",
+        "label": {
+          "it": "Progetto ASTERIO",
+          "en": "ASTERIO Project"
+        }
+      },
+      {
+        "url": "https://www.instagram.com/norkmagazine/",
+        "label": {
+          "it": "NORK Magazine",
+          "en": "NORK Magazine"
+        }
+      },
+      {
+        "url": "https://muvemestre.visitmuve.it/it/mostre/archivio-mostre/artefici-del-nostro-tempo/2019/12/20824/esposizione-delle-opere/",
+        "label": {
+          "it": "Artefici del Nostro Tempo 2020",
+          "en": "Artefici del Nostro Tempo 2020"
+        }
+      }
     ]
   },
   {
@@ -218,8 +315,13 @@
       "en": "Artistic residency organised by Giusto il Tempo di un Tè at Ex-Lanificio (Naples)"
     },
     "links": [
-      { "url": "http://www.lanhub.org/amaca/", "label": { "it": "Amacà", "en": "Amacà" } }
+      {
+        "url": "http://www.lanhub.org/amaca/",
+        "label": {
+          "it": "Amacà",
+          "en": "Amacà"
+        }
+      }
     ]
   }
 ]
-
