@@ -1,0 +1,50 @@
+{
+  "it": {
+    "hero": {
+      "title": "AI & Creative Technology",
+      "subtitle": "Ingegnere AI con background artistico. Soluzioni enterprise e consulenza per progetti che uniscono tecnologia e creatività.",
+      "credentials": "Software Developer • Solutions Architect @ Netcom Group • Master in AI",
+      "cta": "Parliamone"
+    },
+    "services": {
+      "enterprise": {
+        "title": "Soluzioni AI Enterprise",
+        "desc": "Computer vision, NLP, predictive maintenance, chatbots. Progettazione e implementazione di sistemi AI/ML per aziende, con esperienza in team leading e project management."
+      },
+      "creative": {
+        "title": "Consulenza Artistico-Tecnologica",
+        "desc": "Supporto tecnico per installazioni artistiche, bandi culturali e progetti creativi. Traduco visioni artistiche in soluzioni tecniche realizzabili."
+      }
+    },
+    "about": {
+      "text1": "Sono un ingegnere AI con un piede nel mondo enterprise e uno nell'arte contemporanea. Ex Co-founder e CTO di Sohma AI, che sviluppa infrastruttura AI per la comprensione e la risposta alla regolazione emotiva umana nell'interazione reale. Tech Lead presso Netcom Group dal 2016.",
+      "text2": "Ho completato il Master in AI all'Università di Bologna (2025), specializzandomi in NLP per testi storici. Il mio background include residenze con figure come Cesare Pietroiusti, progetti premiati da MUVE, e consulenza continuativa con Damp Collective dal 2018.",
+      "quote": "\"Concentro le mie attività professionali, artistiche e personali sull’osservazione dei pattern. Osservare per manipolare, manipolare per osservare.\"",
+      "text3": "Quello che mi interessa è l'intersezione: portare rigore ingegneristico a progetti artistici e sensibilità creativa a problemi aziendali. Sono disponibile sia per consulenze enterprise che per collaborazioni su bandi culturali e installazioni."
+    }
+  },
+  "en": {
+    "hero": {
+      "title": "AI & Creative Technology",
+      "subtitle": "AI Engineer with artistic background. Enterprise solutions and consulting for projects that blend technology and creativity.",
+      "credentials": "Software Developer • Solutions Architect @ Netcom Group • MSc in AI",
+      "cta": "Let's Talk"
+    },
+    "services": {
+      "enterprise": {
+        "title": "Enterprise AI Solutions",
+        "desc": "Computer vision, NLP, predictive maintenance, chatbots. Design and implementation of AI/ML systems for companies, with experience in team leading and project management."
+      },
+      "creative": {
+        "title": "Artistic-Technical Consulting",
+        "desc": "Technical support for art installations, cultural grants and creative projects. I translate artistic visions into feasible technical solutions."
+      }
+    },
+    "about": {
+      "text1": "I'm an AI engineer with one foot in the enterprise world and one in contemporary art. Former Co-founder and CTO of Sohma AI, building AI infrastructure that enables systems to understand and respond to human emotional regulation during real-world interaction. Tech Lead at Netcom Group since 2016.",
+      "text2": "I completed my Master's in AI at the University of Bologna (2025), specializing in NLP for historical texts. My background includes residencies with figures like Cesare Pietroiusti, MUVE award-winning projects, and ongoing consulting with Damp Collective since 2018.",
+      "quote": "\"I focus my professional, artistic and personal activities on observing patterns. Observing in order to manipulate, manipulating in order to observe.\"",
+      "text3": "What interests me is the intersection: bringing engineering rigor to artistic projects and creative sensitivity to business problems. I'm available for both enterprise consulting and collaborations on cultural grants and installations."
+    }
+  }
+}
