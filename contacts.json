@@ -15,8 +15,8 @@
       }
     ],
     "footer_links": [
-      { "url": "https://exposedproject.com", "label": { "it": "Home", "en": "Home" } },
-      { "url": "https://exposedproject.com/wellness", "label": { "it": "Wellness", "en": "Wellness" } }
+      { "url": "https://exposedproject.eu", "label": { "it": "Home", "en": "Home" } },
+      { "url": "https://exposedproject.eu/wellness", "label": { "it": "Wellness", "en": "Wellness" } }
     ]
   },
   "wellness": {
@@ -27,8 +27,8 @@
     },
     "paypal": "https://paypal.me/bileragger",
     "footer_links": [
-      { "url": "https://exposedproject.com", "label": { "it": "Home", "en": "Home" } },
-      { "url": "https://exposedproject.com/tech", "label": { "it": "Technology", "en": "Technology" } }
+      { "url": "https://exposedproject.eu", "label": { "it": "Home", "en": "Home" } },
+      { "url": "https://exposedproject.eu/tech", "label": { "it": "Technology", "en": "Technology" } }
     ]
   }
 }
